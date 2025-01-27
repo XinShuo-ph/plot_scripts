@@ -7,9 +7,6 @@ if [ -z "$1" ]; then
 fi
 simname=$1
 
-# Load the parallel module
-module load parallel
-
 # Define an array of commands
 commands=(
 "
@@ -22,43 +19,6 @@ python makeplotxz.py \
     --plot_cmap_min -0.5\
     --extent_x 1600\
     --extent_y 1600
-"
-
-"
-python makeplotxz.py \
-    --simname $simname\
-    --skipevery 1\
-    --plotfield TEST1\
-    --maxframes 5\
-    --plot_cmap_max 0.1\
-    --plot_cmap_min -0.1\
-    --extent_x 1600\
-    --extent_y 1600
-"
-
-"
-python makeplotxz.py \
-    --simname $simname\
-    --skipevery 1\
-    --plotfield TEST2\
-    --maxframes 5\
-    --plot_cmap_max 0.1\
-    --plot_cmap_min -0.1\
-    --extent_x 1600\
-    --extent_y 1600
-"
-
-"
-python makeplotxz.py \
-    --simname $simname\
-    --skipevery 1\
-    --plotfield TEST3\
-    --maxframes 5\
-    --plot_cmap_max 0.1\
-    --plot_cmap_min -0.1\
-    --extent_x 1600\
-    --extent_y 1600
-
 "
 
 "
@@ -268,45 +228,6 @@ python makeplotxz.py \
     --plot_cmap_min -0.5\
     --extent_x 20\
     --extent_y 20
-"
-
-"
-python makeplotxz.py \
-    --simname $simname\
-    --skipevery 1\
-    --plotfield TEST1\
-    --maxframes 5\
-    --plot_cmap_max 0.1\
-    --plot_cmap_min -0.1\
-    --extent_x 20\
-    --extent_y 20
-"
-
-"
-python makeplotxz.py \
-    --simname $simname\
-    --skipevery 1\
-    --plotfield TEST2\
-    --maxframes 5\
-    --plot_cmap_max 0.1\
-    --plot_cmap_min -0.1\
-    --extent_x 20\
-    --extent_y 20
-
-
-"
-
-"
-python makeplotxz.py \
-    --simname $simname\
-    --skipevery 1\
-    --plotfield TEST3\
-    --maxframes 5\
-    --plot_cmap_max 0.1\
-    --plot_cmap_min -0.1\
-    --extent_x 20\
-    --extent_y 20
-
 "
 
 "

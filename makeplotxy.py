@@ -56,8 +56,13 @@ else:
 # depending on the field, set the label, 'SPHI" -> "Re$\\phi$", 'SPHI2' -> "Im$\\phi$", 'SPI' -> "Re$\\Pi$", 'SPI2' -> "Im$\\Pi$" 
 
 
-basedir = "/pscratch/sd/x/xinshuo/runGReX/"
-plotdir = "/pscratch/sd/x/xinshuo/plotGReX/"
+basedir = "/data/xinshuo/runGReX/"
+plotdir = "/data/xinshuo/plot_scripts/"
+
+# make plotdir + simname directory if it does not exist
+if not os.path.exists(os.path.join(plotdir, simname)):
+    os.makedirs(os.path.join(plotdir, simname))
+
 rundir = basedir + simname +"/"
 # there are a lot of pltXXXXX dirs, corresponding to different iterations, load all of them
 

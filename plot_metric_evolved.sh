@@ -7,8 +7,6 @@ if [ -z "$1" ]; then
 fi
 simname=$1
 
-# Load the parallel module
-module load parallel
 
 # Define an array of commands
 commands=(

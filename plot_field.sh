@@ -7,7 +7,6 @@ if [ -z "$1" ]; then
 fi
 simname=$1
 
-module load parallel
 
 commands=(
     "
