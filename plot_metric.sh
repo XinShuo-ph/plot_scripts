@@ -12,6 +12,9 @@ module load parallel
 
 # Define an array of commands
 commands=(
+
+
+
 "
 python makeplotxy.py \
     --simname $simname\

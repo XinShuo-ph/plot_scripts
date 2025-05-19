@@ -157,7 +157,7 @@ for curlevel in [1,2,3,4,5,6,7]:
         np.save("/global/homes/x/xinshuo/"+ simname +"/surface_int_frame%d_R%.1f.npy"%(frameidx,outR),surface_results)
         if innerR > 0: # compute level 6 here
             surface_results = np.zeros(4)
-            surface_results[0] = float(ds.current_time)
+            surface_results[0] = float(ds.current_time) 
             mydomain = ds.box(level_left_edges[6], level_right_edges[6])
             surface = ds.surface(mydomain, 'radius', (innerR, 'code_length'))
             for idx,field in enumerate(['SURFACE_X','SURFACE_Y','SURFACE_Z']):
@@ -171,7 +171,7 @@ for curlevel in [1,2,3,4,5,6,7]:
                 print("The integral of the field %s at innerR is %f"%(field,integral))
                 print("area error: ", (float(tris_area.sum()) - 4*np.pi*innerR**2)/(4*np.pi*innerR**2))
             np.save("/global/homes/x/xinshuo/"+ simname +"/surface_int_frame%d_innerR%.1f.npy"%(frameidx,innerR),surface_results)
-    if surface and curlevel == 7 and innerR < 0:
+    if surface and curlevel in [6,7] and innerR < 0:
         # extract the surface integrals on the two black holes
         surface_results_bh1 = np.zeros(4)
         surface_results_bh1[0] = float(ds.current_time)

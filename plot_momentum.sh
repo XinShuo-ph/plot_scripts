@@ -18,8 +18,19 @@ python makeplotxy.py \
     --maxframes 10000\
     --plot_cmap_max 0.0001\
     --plot_cmap_min -0.0001\
-    --extent_x 3200\
-    --extent_y 3200
+    --extent_x 6500\
+    --extent_y 6500
+"
+    "
+python makeplotxy.py \
+    --simname $simname\
+    --skipevery 1\
+    --plotfield SMOMENTUM_X\
+    --maxframes 10000\
+    --plot_cmap_max 0.0001\
+    --plot_cmap_min -0.0001\
+    --extent_x 3260\
+    --extent_y 3260
 "
 
 "
