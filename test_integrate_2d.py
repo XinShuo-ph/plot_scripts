@@ -63,6 +63,9 @@ if len(plt_dirs) > maxframes:
     plt_dirs = plt_dirs[:maxframes]
 
 results = []
+# define the mesh and compute them only one for all levels, to save time and memory
+all_level_xmeshs = {}
+all_level_ymeshs = {}
 
 for frameidx, plt_dir in enumerate(plt_dirs):
     ds = yt.load(os.path.join(rundir, plt_dir))
@@ -77,6 +80,7 @@ for frameidx, plt_dir in enumerate(plt_dirs):
     field_ds_levels = {}
     vol_x, vol_y, vol_z = 0.0, 0.0, 0.0
     mom_x, mom_y, mom_z = 0.0, 0.0, 0.0
+    torque = 0.0 # torque = x*Fy - y*Fx
 
     for curlevel in range(ds.max_level+1):
         outdomain = ds.box(level_left_edges[curlevel], level_right_edges[curlevel])
@@ -114,7 +118,36 @@ for frameidx, plt_dir in enumerate(plt_dirs):
         
         for field in ['VOLUME_X', 'VOLUME_Y', 'VOLUME_Z', 'SMOMENTUM_X', 'SMOMENTUM_Y', 'SMOMENTUM_Z']:
             data = field_ds_levels[curlevel][field][:]
+            # print(data.shape)
             sum_z = data.sum(axis=2)
+            if len(results) == 0:# only compute the mesh once to save time and memory
+                all_level_xmeshs[curlevel] = field_ds_levels[curlevel]['x'][:].sum(axis=2)
+                # print(all_level_xmeshs[curlevel].shape)
+                all_level_ymeshs[curlevel] = field_ds_levels[curlevel]['y'][:].sum(axis=2)
+                # print(all_level_ymeshs[curlevel].shape)
+                if outplot:
+                    plt.figure()
+                    cmap = plt.cm.RdBu.copy()
+                    vmax = np.abs(all_level_xmeshs[curlevel]).max()
+                    plt.imshow(all_level_xmeshs[curlevel].T, origin='lower', aspect='auto', cmap=cmap,
+                        vmin=-vmax, vmax=vmax, extent=[level_left_edges[curlevel][0], level_right_edges[curlevel][0], 
+                        level_left_edges[curlevel][1], level_right_edges[curlevel][1]])
+                    plt.colorbar(label='xmesh')
+                    plt.xlabel('x')
+                    plt.ylabel('y')
+                    plt.title(f'xmesh at time {int(ds.current_time)} - level {curlevel}')
+                    plt.savefig(f"{plotdir}/tmp/xmesh_{frameidx}_{curlevel}.png")
+                    plt.close()
+                    plt.figure()
+                    plt.imshow(all_level_ymeshs[curlevel].T, origin='lower', aspect='auto', cmap=cmap,
+                        vmin=-vmax, vmax=vmax, extent=[level_left_edges[curlevel][0], level_right_edges[curlevel][0], 
+                        level_left_edges[curlevel][1], level_right_edges[curlevel][1]])
+                    plt.colorbar(label='ymesh')
+                    plt.xlabel('x')
+                    plt.ylabel('y')
+                    plt.title(f'ymesh at time {int(ds.current_time)} - level {curlevel}')
+                    plt.savefig(f"{plotdir}/tmp/ymesh_{frameidx}_{curlevel}.png")
+                    plt.close()
             if outplot:
                 plt.figure()
                 # Create a custom RdBu colormap with white at center (0)
@@ -135,8 +168,10 @@ for frameidx, plt_dir in enumerate(plt_dirs):
             integral = sum_z.sum() * dx * dy
             if field == 'VOLUME_X':
                 vol_x += integral
+                torque += - (all_level_ymeshs[curlevel] * sum_z).sum() * dx * dy
             elif field == 'VOLUME_Y':
                 vol_y += integral
+                torque += (all_level_xmeshs[curlevel] * sum_z).sum() * dx * dy
             elif field == 'VOLUME_Z':
                 vol_z += integral
             elif field == 'SMOMENTUM_X':
@@ -146,10 +181,10 @@ for frameidx, plt_dir in enumerate(plt_dirs):
             elif field == 'SMOMENTUM_Z':
                 mom_z += integral
 
-    results.append([ds.current_time, vol_x, vol_y, vol_z, mom_x, mom_y, mom_z])
+    results.append([ds.current_time, vol_x, vol_y, vol_z, mom_x, mom_y, mom_z, torque])
 
 results = np.array(results)
-np.save(f"{simname}_2d_integrals.npy", results)
+np.save(f"{simname}_2d_integrals_outR{outR}.npy", results)
 
 plt.figure()
 plt.plot(results[:,0], results[:,1], label='VOLUME_X')
@@ -158,7 +193,7 @@ plt.plot(results[:,0], results[:,3], label='VOLUME_Z')
 plt.xlabel('Time')
 plt.ylabel('2D Integral')
 plt.legend()
-plt.savefig(f"{simname}_2d_volume_integrals.png")
+plt.savefig(f"{simname}_2d_volume_integrals_outR{outR}.png")
 plt.close()
 
 plt.figure()
@@ -168,5 +203,5 @@ plt.plot(results[:,0], results[:,6], label='SMOMENTUM_Z')
 plt.xlabel('Time')
 plt.ylabel('2D Integral')
 plt.legend()
-plt.savefig(f"{simname}_2d_momentum_integrals.png")
+plt.savefig(f"{simname}_2d_momentum_integrals_outR{outR}.png")
 plt.close()

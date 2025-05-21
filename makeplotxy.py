@@ -28,7 +28,7 @@ parser.add_argument('--plot_fontsize', type=int, default=30, help='Font size for
 parser.add_argument('--maxframes', type=int, default=500, help='max num of frames (to avoid OOM)')
 parser.add_argument('--mu2', type=float, default=0.04, help='scalar field mass')
 parser.add_argument('--Torbit', type=float, default=2*np.pi/(0.0077395162481920582*2.71811), help='orbital period of the binary')
-parser.add_argument('--labelT', type=bool, default=True, help='label time in units of Torbit')
+parser.add_argument('--labelT', type=bool, default=False, help='label time in units of Torbit')
 
 args = parser.parse_args()
 

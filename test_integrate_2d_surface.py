@@ -70,6 +70,7 @@ for frameidx, plt_dir in enumerate(plt_dirs):
     sur_x, sur_y, sur_z = 0.0, 0.0, 0.0
     sur_bh1_x, sur_bh1_y, sur_bh1_z = 0.0, 0.0, 0.0
     sur_bh2_x, sur_bh2_y, sur_bh2_z = 0.0, 0.0, 0.0
+    rhoavg = 0.0
 
     # a simple routine to find the level that contains the outer boundary, please make sure the circle does not cross the level boundary
     out_boundary_level = -1
@@ -92,7 +93,7 @@ for frameidx, plt_dir in enumerate(plt_dirs):
         
         field_ds_levels[curlevel] = ds.covering_grid(level=curlevel, left_edge=level_left_edges[curlevel], dims=level_dims[curlevel], data_source=intdomain)
         
-        for field in ['SURFACE_X', 'SURFACE_Y', 'SURFACE_Z']:
+        for field in ['SURFACE_X', 'SURFACE_Y', 'SURFACE_Z', 'RHO_ENERGY']:
             data = field_ds_levels[curlevel][field][:]
             sum_z = data.sum(axis=2)
             extent = [level_left_edges[curlevel][0], level_right_edges[curlevel][0], 
@@ -158,6 +159,8 @@ for frameidx, plt_dir in enumerate(plt_dirs):
                 sur_y += integral
             elif field == 'SURFACE_Z':
                 sur_z += integral
+            elif field == 'RHO_ENERGY':
+                rhoavg += integral/(2.0 * np.pi * outR) # compute averaged rho
 
     # integrate on the two black holes
     levels_to_use = [ds.max_level-1, ds.max_level]                     # BH excision usually sits in these
@@ -249,10 +252,11 @@ for frameidx, plt_dir in enumerate(plt_dirs):
     results.append([ds.current_time,
                 sur_x, sur_y, sur_z,          # outer surface
                 sur_bh1_x, sur_bh1_y, sur_bh1_z, # BH 1 
-                sur_bh2_x, sur_bh2_y, sur_bh2_z]) # BH 2
+                sur_bh2_x, sur_bh2_y, sur_bh2_z, # BH 2
+                rhoavg]) 
 
 results = np.array(results)
-np.save(f"{simname}_2d_integrals_surface.npy", results)
+np.save(f"{simname}_2d_integrals_surface_outR{outR}.npy", results)
 
 plt.figure()
 plt.plot(results[:,0], results[:,1], label='SURFACE_X')
@@ -261,7 +265,7 @@ plt.plot(results[:,0], results[:,3], label='SURFACE_Z')
 plt.xlabel('Time')
 plt.ylabel('2D Integral')
 plt.legend()
-plt.savefig(f"{simname}_2d_surface_integrals.png")
+plt.savefig(f"{simname}_2d_surface_integrals_outR{outR}.png")
 plt.close()
 
 plt.figure()

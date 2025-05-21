@@ -33,6 +33,19 @@ python makeplotxy.py \
     --maxframes 10000\
     --plot_cmap_max 0.01\
     --plot_cmap_min 0.00001\
+    --extent_x 13000\
+    --extent_y 13000
+"
+    "
+python makeplotxy.py \
+    --simname $simname \
+    --plot_log 1\
+    --skipevery 1\
+    --plotfield RHO_ENERGY\
+    --plot_cmap jet\
+    --maxframes 10000\
+    --plot_cmap_max 0.01\
+    --plot_cmap_min 0.00001\
     --extent_x 3260\
     --extent_y 3260
 "
