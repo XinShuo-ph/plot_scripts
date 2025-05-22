@@ -81,6 +81,7 @@ for frameidx, plt_dir in enumerate(plt_dirs):
     vol_x, vol_y, vol_z = 0.0, 0.0, 0.0
     mom_x, mom_y, mom_z = 0.0, 0.0, 0.0
     torque = 0.0 # torque = x*Fy - y*Fx
+    L_z = 0.0 # angular momentum
 
     for curlevel in range(ds.max_level+1):
         outdomain = ds.box(level_left_edges[curlevel], level_right_edges[curlevel])
@@ -176,12 +177,14 @@ for frameidx, plt_dir in enumerate(plt_dirs):
                 vol_z += integral
             elif field == 'SMOMENTUM_X':
                 mom_x += integral
+                L_z += - (all_level_ymeshs[curlevel] * sum_z).sum() * dx * dy
             elif field == 'SMOMENTUM_Y':
                 mom_y += integral
+                L_z += (all_level_xmeshs[curlevel] * sum_z).sum() * dx * dy
             elif field == 'SMOMENTUM_Z':
                 mom_z += integral
 
-    results.append([ds.current_time, vol_x, vol_y, vol_z, mom_x, mom_y, mom_z, torque])
+    results.append([ds.current_time, vol_x, vol_y, vol_z, mom_x, mom_y, mom_z, torque, L_z])
 
 results = np.array(results)
 np.save(f"{simname}_2d_integrals_outR{outR}.npy", results)
@@ -190,6 +193,7 @@ plt.figure()
 plt.plot(results[:,0], results[:,1], label='VOLUME_X')
 plt.plot(results[:,0], results[:,2], label='VOLUME_Y')
 plt.plot(results[:,0], results[:,3], label='VOLUME_Z')
+plt.plot(results[:,0], results[:,7], label='TORQUE')
 plt.xlabel('Time')
 plt.ylabel('2D Integral')
 plt.legend()
@@ -200,6 +204,7 @@ plt.figure()
 plt.plot(results[:,0], results[:,4], label='SMOMENTUM_X')
 plt.plot(results[:,0], results[:,5], label='SMOMENTUM_Y')
 plt.plot(results[:,0], results[:,6], label='SMOMENTUM_Z')
+plt.plot(results[:,0], results[:,8], label='ANGULAR MOMENTUM')
 plt.xlabel('Time')
 plt.ylabel('2D Integral')
 plt.legend()

@@ -71,6 +71,9 @@ for frameidx, plt_dir in enumerate(plt_dirs):
     sur_bh1_x, sur_bh1_y, sur_bh1_z = 0.0, 0.0, 0.0
     sur_bh2_x, sur_bh2_y, sur_bh2_z = 0.0, 0.0, 0.0
     rhoavg = 0.0
+    sur_torque = 0.0
+    sur_bh1_torque = 0.0
+    sur_bh2_torque = 0.0
 
     # a simple routine to find the level that contains the outer boundary, please make sure the circle does not cross the level boundary
     out_boundary_level = -1
@@ -96,24 +99,9 @@ for frameidx, plt_dir in enumerate(plt_dirs):
         for field in ['SURFACE_X', 'SURFACE_Y', 'SURFACE_Z', 'RHO_ENERGY']:
             data = field_ds_levels[curlevel][field][:]
             sum_z = data.sum(axis=2)
+                # Define the extent using the level boundaries for correct axis scaling
             extent = [level_left_edges[curlevel][0], level_right_edges[curlevel][0], 
                         level_left_edges[curlevel][1], level_right_edges[curlevel][1]]
-            if outplot:
-                plt.figure()
-                # Create a custom RdBu colormap with white at center (0)
-                cmap = plt.cm.RdBu.copy()
-                # Get the absolute maximum value for symmetric color scaling
-                vmax = np.abs(sum_z).max()
-                # Define the extent using the level boundaries for correct axis scaling
-                extent = [level_left_edges[curlevel][0], level_right_edges[curlevel][0], 
-                        level_left_edges[curlevel][1], level_right_edges[curlevel][1]]
-                plt.imshow(sum_z.T, origin='lower', aspect='auto', cmap=cmap, 
-                        vmin=-vmax, vmax=vmax, extent=extent)
-                plt.colorbar(label=field)
-                plt.xlabel('x')
-                plt.ylabel('y')
-                plt.title(f'{field} at time {int(ds.current_time)} - level {curlevel}')
-                plt.savefig(f"{plotdir}/tmp/{field}_{frameidx}_{curlevel}.png")
 
             # interpolate and do a line integral
             n_theta = 1000
@@ -143,20 +131,85 @@ for frameidx, plt_dir in enumerate(plt_dirs):
             j_idx = np.clip(j_idx, 0, Ny-1)
 
             # ---------- pick values & integrate ----------
-            # NB: NumPy arrays are row‑major: first index = y (j), second = x (i)
-            vals = sum_z[j_idx, i_idx]
+            # make sure the order of i_idx and j_idx correct (by checking the plots!!)
+            vals = sum_z[i_idx, j_idx]
 
             dl = (2.0 * np.pi * outR) / n_theta        # arc length of each segment
             integral = np.sum(vals) * dl
+
             
+            if outplot:
+                # Create figure with three subplots (3 rows, 1 column)
+                fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(10, 15), 
+                                              gridspec_kw={'height_ratios': [3, 1, 1]})
+                
+                # Top subplot - 2D image
+                # Create a custom RdBu colormap with white at center (0)
+                cmap = plt.cm.RdBu.copy()
+                # Get the absolute maximum value for symmetric color scaling
+                vmax = np.abs(sum_z).max()
+                extent = [level_left_edges[curlevel][0], level_right_edges[curlevel][0], 
+                        level_left_edges[curlevel][1], level_right_edges[curlevel][1]]
+                im = ax1.imshow(sum_z.T, origin='lower', aspect='auto', cmap=cmap, 
+                        vmin=-vmax, vmax=vmax, extent=extent)
+                plt.colorbar(im, ax=ax1, label=field)
+                
+                # Add scatter points for the sampling locations
+                # Create alpha values that increase linearly with theta (0->1)
+                ax1.scatter(x_phys, y_phys, s=1, color='black', alpha=theta / (2*np.pi)/2)
+                # Draw the circle
+                # circle = plt.Circle((xc, yc), outR, fill=False, color='black', linestyle='--')
+                # ax1.add_patch(circle)
+                
+                ax1.set_xlabel('x')
+                ax1.set_ylabel('y')
+                ax1.set_title(f'{field} at time {int(ds.current_time)} - level {curlevel}')
+                
+                # Middle subplot - values vs theta
+                ax2.plot(theta, vals)
+                ax2.set_xlabel('θ (radians)')
+                ax2.set_ylabel(f'{field} values')
+                ax2.set_xlim(0, 2*np.pi)
+                ax2.grid(True)
+                
+                # Bottom subplot - torque contribution vs theta
+                if field == 'SURFACE_X':
+                    torque_vals = -(y_phys * vals)
+                    torque_label = '-y·Fx (torque contribution)'
+                elif field == 'SURFACE_Y':
+                    torque_vals = x_phys * vals
+                    torque_label = 'x·Fy (torque contribution)'
+                else:
+                    torque_vals = np.zeros_like(vals)
+                    torque_label = 'No torque contribution'
+                
+                ax3.plot(theta, torque_vals)
+                ax3.set_xlabel('θ (radians)')
+                ax3.set_ylabel(torque_label)
+                ax3.set_xlim(0, 2*np.pi)
+                ax3.grid(True)
+                
+                plt.tight_layout()
+                plt.savefig(f"{plotdir}/tmp/{field}_{frameidx}_{curlevel}.png")
+                plt.close(fig)
             if outplot:
                 print(f"vals: {vals[0:10]}\n theta: {theta[0:10]}\n i_idx: {i_idx[0:10]}\n j_idx: {j_idx[0:10]}\n dl: {dl}\n")
                 print(f"integral of {field} at frame {frameidx} level {curlevel}: {integral}")
 
             if field == 'SURFACE_X':
                 sur_x += integral
+                torque_integral = -(y_phys * vals).sum() * dl
+                sur_torque += torque_integral
+                if outplot:
+                    print(f"torque contributions from -y Fx: {-y_phys[0:10] * vals[0:10]}")
+                    print(f"total contributions from -y Fx: {torque_integral}")
             elif field == 'SURFACE_Y':
                 sur_y += integral
+                torque_integral = (x_phys * vals).sum() * dl
+                sur_torque += torque_integral
+                if outplot:
+                    print(f"torque contributions from x Fy: {x_phys[0:10] * vals[0:10]}")
+                    print(f"total contributions from x Fy: {torque_integral}")
             elif field == 'SURFACE_Z':
                 sur_z += integral
             elif field == 'RHO_ENERGY':
@@ -201,7 +254,7 @@ for frameidx, plt_dir in enumerate(plt_dirs):
 
         i = int(np.clip(np.floor((x - xmin) / dx), 0, nx-1))
         j = int(np.clip(np.floor((y - ymin) / dy), 0, ny-1))
-        return sum_z[j, i]
+        return sum_z[i,j]
 
 
     # centres (rotate with binary)
@@ -224,6 +277,8 @@ for frameidx, plt_dir in enumerate(plt_dirs):
 
         vals_bh1 = np.empty(n_th)
         vals_bh2 = np.empty(n_th)
+        vals_bh1_torque = np.empty(n_th)
+        vals_bh2_torque = np.empty(n_th)
 
         for k, ang in enumerate(theta):
             # sample point on each circle
@@ -236,15 +291,27 @@ for frameidx, plt_dir in enumerate(plt_dirs):
                                             sumz_lv_field, extent_lv)
             vals_bh2[k] = sample_surface_value(x2, y2, fld,
                                             sumz_lv_field, extent_lv)
+            if fld == 'SURFACE_X':
+                vals_bh1_torque[k] = - (y1 * vals_bh1[k]) 
+                vals_bh2_torque[k] = - (y2 * vals_bh2[k]) 
+            elif fld == 'SURFACE_Y':
+                vals_bh1_torque[k] = (x1 * vals_bh1[k]) 
+                vals_bh2_torque[k] = (x2 * vals_bh2[k]) 
 
         integral_bh1 = np.sum(vals_bh1) * dl_bh1
         integral_bh2 = np.sum(vals_bh2) * dl_bh2
+        integral_bh1_torque = np.sum(vals_bh1_torque) * dl_bh1
+        integral_bh2_torque = np.sum(vals_bh2_torque) * dl_bh2
 
         # accumulate to the correct running totals ---------------
         if fld == 'SURFACE_X':
             sur_bh1_x, sur_bh2_x = integral_bh1, integral_bh2
+            sur_bh1_torque += integral_bh1_torque
+            sur_bh2_torque += integral_bh2_torque
         elif fld == 'SURFACE_Y':
             sur_bh1_y, sur_bh2_y = integral_bh1, integral_bh2
+            sur_bh1_torque += integral_bh1_torque
+            sur_bh2_torque += integral_bh2_torque
         elif fld == 'SURFACE_Z':
             sur_bh1_z, sur_bh2_z = integral_bh1, integral_bh2
 
@@ -253,7 +320,7 @@ for frameidx, plt_dir in enumerate(plt_dirs):
                 sur_x, sur_y, sur_z,          # outer surface
                 sur_bh1_x, sur_bh1_y, sur_bh1_z, # BH 1 
                 sur_bh2_x, sur_bh2_y, sur_bh2_z, # BH 2
-                rhoavg]) 
+                rhoavg, sur_torque, sur_bh1_torque, sur_bh2_torque]) 
 
 results = np.array(results)
 np.save(f"{simname}_2d_integrals_surface_outR{outR}.npy", results)
@@ -262,6 +329,8 @@ plt.figure()
 plt.plot(results[:,0], results[:,1], label='SURFACE_X')
 plt.plot(results[:,0], results[:,2], label='SURFACE_Y')
 plt.plot(results[:,0], results[:,3], label='SURFACE_Z')
+plt.plot(results[:,0], results[:,10], label='rhoavg')
+plt.plot(results[:,0], results[:,11], label='sur_torque')
 plt.xlabel('Time')
 plt.ylabel('2D Integral')
 plt.legend()
@@ -275,6 +344,8 @@ plt.plot(results[:,0], results[:,6], label='SURFACE_Z BH1')
 plt.plot(results[:,0], results[:,7], label='SURFACE_X BH2')
 plt.plot(results[:,0], results[:,8], label='SURFACE_Y BH2')
 plt.plot(results[:,0], results[:,9], label='SURFACE_Z BH2')
+plt.plot(results[:,0], results[:,12], label='sur_bh1_torque')
+plt.plot(results[:,0], results[:,13], label='sur_bh2_torque')
 plt.xlabel('Time')
 plt.ylabel('2D Integral')
 plt.legend()
