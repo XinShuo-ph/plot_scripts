@@ -25,7 +25,7 @@ parser.add_argument('--plot_cmap', type=str, default='RdBu_r', help='Colormap fo
 parser.add_argument('--plot_cmap_max', type=float, default=1, help='Maximum value for colormap')
 parser.add_argument('--plot_cmap_min', type=float, default=-1, help='Minimum value for colormap')
 parser.add_argument('--plot_fontsize', type=int, default=30, help='Font size for the plot')
-parser.add_argument('--maxframes', type=int, default=500, help='max num of frames (to avoid OOM)')
+parser.add_argument('--maxframes', type=int, default=600, help='max num of frames (to avoid OOM)')
 parser.add_argument('--mu2', type=float, default=0.04, help='scalar field mass')
 parser.add_argument('--Torbit', type=float, default=2*np.pi/(0.0077395162481920582*2.71811), help='orbital period of the binary')
 parser.add_argument('--labelT', type=bool, default=False, help='label time in units of Torbit')
@@ -69,7 +69,7 @@ if len(plt_dirs) > maxframes:
     plt_dirs = plt_dirs[:maxframes]
 
 # Load all datasets
-datasets = [yt.load(os.path.join(rundir, d)) for d in plt_dirs]
+datasets = [os.path.join(rundir, d) for d in plt_dirs]
 
 # plot the scalar field
 
@@ -95,7 +95,7 @@ for plotfield in fields_toplot:
 
     for itidx in range(len(datasets)):
 
-        ds = datasets[itidx]
+        ds = yt.load(datasets[itidx])
 
         slc = yt.SlicePlot(ds, 'z', plotfield)
         if not plot_log:

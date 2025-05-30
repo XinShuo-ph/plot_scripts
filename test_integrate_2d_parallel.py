@@ -20,13 +20,13 @@ parser.add_argument('--bbh1_r', type=float, default=3.98070/binary_mass, help='r
 parser.add_argument('--bbh2_r', type=float, default=3.98070/binary_mass, help='radius of the second black hole')
 parser.add_argument('--binary_omega', type=float, default=- 0.002657634562418009 * 2.71811, help='orbital frequency of the binary')
 parser.add_argument('--excise_factor', type=float, default=1.5, help='factor to excise the black hole')
-parser.add_argument('--integratefield', type=str, default='VOLUME_X', help='Field to integrate')
-parser.add_argument('--allfields', action='store_true', help='integrate all fields')
-parser.add_argument('--surface', action='store_true', help='integrate the surface quantities')
 parser.add_argument('--outplot', action='store_true', help='Output the plot')
-parser.add_argument('--plotsum', action='store_true', help='plot the sum instead of a slice')
 parser.add_argument('--fix_metric_error', action='store_true', help='Fix the metric error in VOLUME fields (apply 1/sqrt(gamma) correction)')
 parser.add_argument('--psipow', type=float, default=2, help='power of psi factor')
+# Add worker arguments for parallelization
+parser.add_argument('--worker_id', type=int, default=0, help='Worker ID for parallel processing')
+parser.add_argument('--total_workers', type=int, default=1, help='Total number of workers for parallel processing')
+parser.add_argument('--temp_output', action='store_true', help='Save intermediate results to temporary files')
 
 args = parser.parse_args()
 simname = args.simname
@@ -40,13 +40,12 @@ bbh1_r = args.bbh1_r
 bbh2_r = args.bbh2_r
 binary_omega = args.binary_omega
 excise_factor = args.excise_factor
-integratefield = args.integratefield
-allfields = args.allfields
-surface = args.surface
 outplot = args.outplot
-plotsum = args.plotsum
 fix_metric_error = args.fix_metric_error
 psipow = args.psipow
+worker_id = args.worker_id
+total_workers = args.total_workers
+temp_output = args.temp_output
 
 basedir = "/pscratch/sd/x/xinshuo/runGReX/"
 plotdir = "/pscratch/sd/x/xinshuo/plotGReX/"
@@ -56,6 +55,9 @@ rundir = basedir + simname +"/"
 if not os.path.exists(plotdir + "tmp"):
     os.makedirs(plotdir + "tmp")
 
+# Create a tmp directory for worker output files
+if temp_output and not os.path.exists(plotdir + f"tmp/worker_{worker_id}"):
+    os.makedirs(plotdir + f"tmp/worker_{worker_id}")
 
 plt_dirs = sorted([d for d in os.listdir(rundir) if d.startswith('plt') and d[3:].isdigit()], key=lambda x: int(x[3:]))
 plt_dirs = plt_dirs[::skipevery]
@@ -63,12 +65,32 @@ plt_dirs = plt_dirs[::skipevery]
 if len(plt_dirs) > maxframes:
     plt_dirs = plt_dirs[:maxframes]
 
+# Divide work among workers
+total_frames = len(plt_dirs)
+frames_per_worker = total_frames // total_workers
+remainder = total_frames % total_workers
+
+# Calculate start and end indices for this worker
+start_idx = worker_id * frames_per_worker + min(worker_id, remainder)
+if worker_id < remainder:
+    end_idx = start_idx + frames_per_worker + 1
+else:
+    end_idx = start_idx + frames_per_worker
+
+# Get the subset of plt_dirs for this worker
+plt_dirs = plt_dirs[start_idx:end_idx]
+
+print(f"Worker {worker_id}/{total_workers} processing {len(plt_dirs)} frames from index {start_idx} to {end_idx-1}")
+
 results = []
 # define the mesh and compute them only one for all levels, to save time and memory
 all_level_xmeshs = {}
 all_level_ymeshs = {}
 
 for frameidx, plt_dir in enumerate(plt_dirs):
+    global_frameidx = start_idx + frameidx
+    print(f"Worker {worker_id}: Processing frame {global_frameidx} ({plt_dir})")
+    
     ds = yt.load(os.path.join(rundir, plt_dir))
     
     level_left_edges = np.array([ds.index.grid_left_edge[np.where(ds.index.grid_levels==[i])[0]].min(axis=0)  for i in range(ds.max_level+1)])
@@ -89,7 +111,7 @@ for frameidx, plt_dir in enumerate(plt_dirs):
         if curlevel < ds.max_level:
             # check if the next level is outside outR (then the current level is not needed)
             if level_right_edges[curlevel+1][0] > outR:
-                print("skipping level", curlevel)
+                print(f"Worker {worker_id}: skipping level", curlevel)
                 continue
             # check if current level is the level of outer boundary
             if level_right_edges[curlevel][0] > outR:
@@ -159,7 +181,7 @@ for frameidx, plt_dir in enumerate(plt_dirs):
                     plt.xlabel('x')
                     plt.ylabel('y')
                     plt.title(f'xmesh at time {int(ds.current_time)} - level {curlevel}')
-                    plt.savefig(f"{plotdir}/tmp/xmesh_{frameidx}_{curlevel}.png")
+                    plt.savefig(f"{plotdir}/tmp/worker_{worker_id}/xmesh_{global_frameidx}_{curlevel}.png")
                     plt.close()
                     plt.figure()
                     plt.imshow(all_level_ymeshs[curlevel].T, origin='lower', aspect='auto', cmap=cmap,
@@ -169,7 +191,7 @@ for frameidx, plt_dir in enumerate(plt_dirs):
                     plt.xlabel('x')
                     plt.ylabel('y')
                     plt.title(f'ymesh at time {int(ds.current_time)} - level {curlevel}')
-                    plt.savefig(f"{plotdir}/tmp/ymesh_{frameidx}_{curlevel}.png")
+                    plt.savefig(f"{plotdir}/tmp/worker_{worker_id}/ymesh_{global_frameidx}_{curlevel}.png")
                     plt.close()
             if outplot:
                 plt.figure()
@@ -186,7 +208,7 @@ for frameidx, plt_dir in enumerate(plt_dirs):
                 plt.xlabel('x')
                 plt.ylabel('y')
                 plt.title(f'{field} at time {int(ds.current_time)} - level {curlevel}')
-                plt.savefig(f"{plotdir}/tmp/{field}_{frameidx}_{curlevel}.png")
+                plt.savefig(f"{plotdir}/tmp/worker_{worker_id}/{field}_{global_frameidx}_{curlevel}.png")
             dx, dy = level_dxs[curlevel][0], level_dxs[curlevel][1]
             integral = sum_z_with_metric.sum() * dx * dy
             if field == 'VOLUME_X':
@@ -207,28 +229,41 @@ for frameidx, plt_dir in enumerate(plt_dirs):
                 mom_z += integral
 
     results.append([ds.current_time, vol_x, vol_y, vol_z, mom_x, mom_y, mom_z, torque, L_z])
+    
+    # Save intermediate results if requested
+    if temp_output:
+        np.save(f"{plotdir}/tmp/worker_{worker_id}/{simname}_2d_integrals_outR{outR}_excise{excise_factor}_worker{worker_id}.npy", 
+                np.array(results))
 
-results = np.array(results)
-np.save(f"{simname}_2d_integrals_outR{outR}_excise{excise_factor}.npy", results)
+# Save worker results
+output_filename = f"{simname}_2d_integrals_outR{outR}_excise{excise_factor}_worker{worker_id}.npy"
+np.save(output_filename, np.array(results))
+print(f"Worker {worker_id}: Saved results to {output_filename}")
 
-plt.figure()
-plt.plot(results[:,0], results[:,1], label='VOLUME_X')
-plt.plot(results[:,0], results[:,2], label='VOLUME_Y')
-plt.plot(results[:,0], results[:,3], label='VOLUME_Z')
-plt.plot(results[:,0], results[:,7], label='TORQUE')
-plt.xlabel('Time')
-plt.ylabel('2D Integral')
-plt.legend()
-plt.savefig(f"{simname}_2d_volume_integrals_outR{outR}_excise{excise_factor}.png")
-plt.close()
+# Only create plots for worker 0 or if requested
+if worker_id == 0 or total_workers == 1:
+    results_array = np.array(results)
+    
+    plt.figure()
+    plt.plot(results_array[:,0], results_array[:,1], label='VOLUME_X')
+    plt.plot(results_array[:,0], results_array[:,2], label='VOLUME_Y')
+    plt.plot(results_array[:,0], results_array[:,3], label='VOLUME_Z')
+    plt.plot(results_array[:,0], results_array[:,7], label='TORQUE')
+    plt.xlabel('Time')
+    plt.ylabel('2D Integral')
+    plt.legend()
+    plt.savefig(f"{simname}_2d_volume_integrals_outR{outR}_excise{excise_factor}_worker{worker_id}.png")
+    plt.close()
 
-plt.figure()
-plt.plot(results[:,0], results[:,4], label='SMOMENTUM_X')
-plt.plot(results[:,0], results[:,5], label='SMOMENTUM_Y')
-plt.plot(results[:,0], results[:,6], label='SMOMENTUM_Z')
-plt.plot(results[:,0], results[:,8], label='ANGULAR MOMENTUM')
-plt.xlabel('Time')
-plt.ylabel('2D Integral')
-plt.legend()
-plt.savefig(f"{simname}_2d_momentum_integrals_outR{outR}_excise{excise_factor}.png")
-plt.close()
+    plt.figure()
+    plt.plot(results_array[:,0], results_array[:,4], label='SMOMENTUM_X')
+    plt.plot(results_array[:,0], results_array[:,5], label='SMOMENTUM_Y')
+    plt.plot(results_array[:,0], results_array[:,6], label='SMOMENTUM_Z')
+    plt.plot(results_array[:,0], results_array[:,8], label='ANGULAR MOMENTUM')
+    plt.xlabel('Time')
+    plt.ylabel('2D Integral')
+    plt.legend()
+    plt.savefig(f"{simname}_2d_momentum_integrals_outR{outR}_excise{excise_factor}_worker{worker_id}.png")
+    plt.close()
+
+print(f"Worker {worker_id}: Finished processing {len(plt_dirs)} frames.") 

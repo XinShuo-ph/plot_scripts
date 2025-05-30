@@ -21,8 +21,11 @@ parser.add_argument('--bbh2_r', type=float, default=3.98070/binary_mass, help='r
 parser.add_argument('--binary_omega', type=float, default=- 0.002657634562418009 * 2.71811, help='orbital frequency of the binary')
 parser.add_argument('--excise_factor', type=float, default=1.5, help='factor to excise the black hole')
 parser.add_argument('--outplot', action='store_true', help='Output the plot')
-parser.add_argument('--plotsum', action='store_true', help='plot the sum instead of a slice')
 parser.add_argument('--psipow', type=float, default=-2, help='power of psi factor')
+# Add worker arguments for parallelization
+parser.add_argument('--worker_id', type=int, default=0, help='Worker ID for parallel processing')
+parser.add_argument('--total_workers', type=int, default=1, help='Total number of workers for parallel processing')
+parser.add_argument('--temp_output', action='store_true', help='Save intermediate results to temporary files')
 
 args = parser.parse_args()
 simname = args.simname
@@ -37,8 +40,10 @@ bbh2_r = args.bbh2_r
 binary_omega = args.binary_omega
 excise_factor = args.excise_factor
 outplot = args.outplot
-plotsum = args.plotsum
 psipow = args.psipow
+worker_id = args.worker_id
+total_workers = args.total_workers
+temp_output = args.temp_output
 
 basedir = "/pscratch/sd/x/xinshuo/runGReX/"
 plotdir = "/pscratch/sd/x/xinshuo/plotGReX/"
@@ -48,15 +53,39 @@ rundir = basedir + simname +"/"
 if not os.path.exists(plotdir + "tmp"):
     os.makedirs(plotdir + "tmp")
 
+# Create a tmp directory for worker output files
+if temp_output and not os.path.exists(plotdir + f"tmp/worker_{worker_id}"):
+    os.makedirs(plotdir + f"tmp/worker_{worker_id}")
+
 plt_dirs = sorted([d for d in os.listdir(rundir) if d.startswith('plt') and d[3:].isdigit()], key=lambda x: int(x[3:]))
 plt_dirs = plt_dirs[::skipevery]
 
 if len(plt_dirs) > maxframes:
     plt_dirs = plt_dirs[:maxframes]
 
+# Divide work among workers
+total_frames = len(plt_dirs)
+frames_per_worker = total_frames // total_workers
+remainder = total_frames % total_workers
+
+# Calculate start and end indices for this worker
+start_idx = worker_id * frames_per_worker + min(worker_id, remainder)
+if worker_id < remainder:
+    end_idx = start_idx + frames_per_worker + 1
+else:
+    end_idx = start_idx + frames_per_worker
+
+# Get the subset of plt_dirs for this worker
+plt_dirs = plt_dirs[start_idx:end_idx]
+
+print(f"Worker {worker_id}/{total_workers} processing {len(plt_dirs)} frames from index {start_idx} to {end_idx-1}")
+
 results = []
 
 for frameidx, plt_dir in enumerate(plt_dirs):
+    global_frameidx = start_idx + frameidx
+    print(f"Worker {worker_id}: Processing frame {global_frameidx} ({plt_dir})")
+    
     ds = yt.load(os.path.join(rundir, plt_dir))
     
     level_left_edges = np.array([ds.index.grid_left_edge[np.where(ds.index.grid_levels==[i])[0]].min(axis=0)  for i in range(ds.max_level+1)])
@@ -83,8 +112,8 @@ for frameidx, plt_dir in enumerate(plt_dirs):
             break
     # print("out_boundary_level", out_boundary_level)
     if out_boundary_level == -1:
-        print("outer boundary level not found for dataset", rundir, "/", plt_dir)
-        exit()
+        print(f"Worker {worker_id}: outer boundary level not found for dataset {rundir}/{plt_dir}")
+        continue  # Skip this frame instead of exiting
 
     # integrate the outer surface
     for curlevel in [out_boundary_level]: # try only the outer surface
@@ -190,26 +219,26 @@ for frameidx, plt_dir in enumerate(plt_dirs):
                 ax3.grid(True)
                 
                 plt.tight_layout()
-                plt.savefig(f"{plotdir}/tmp/{field}_{frameidx}_{curlevel}.png")
+                plt.savefig(f"{plotdir}/tmp/worker_{worker_id}/{field}_{global_frameidx}_{curlevel}.png")
                 plt.close(fig)
             if outplot:
-                print(f"vals: {vals[0:10]}\n theta: {theta[0:10]}\n i_idx: {i_idx[0:10]}\n j_idx: {j_idx[0:10]}\n dl: {dl}\n")
-                print(f"integral of {field} at frame {frameidx} level {curlevel}: {integral}")
+                print(f"Worker {worker_id}: vals: {vals[0:10]}\n theta: {theta[0:10]}\n i_idx: {i_idx[0:10]}\n j_idx: {j_idx[0:10]}\n dl: {dl}\n")
+                print(f"Worker {worker_id}: integral of {field} at frame {global_frameidx} level {curlevel}: {integral}")
 
             if field == 'SURFACE_X':
                 sur_x += integral
                 torque_integral = -(y_phys * vals).sum() * dl
                 sur_torque += torque_integral
                 if outplot:
-                    print(f"torque contributions from -y Fx: {-y_phys[0:10] * vals[0:10]}")
-                    print(f"total contributions from -y Fx: {torque_integral}")
+                    print(f"Worker {worker_id}: torque contributions from -y Fx: {-y_phys[0:10] * vals[0:10]}")
+                    print(f"Worker {worker_id}: total contributions from -y Fx: {torque_integral}")
             elif field == 'SURFACE_Y':
                 sur_y += integral
                 torque_integral = (x_phys * vals).sum() * dl
                 sur_torque += torque_integral
                 if outplot:
-                    print(f"torque contributions from x Fy: {x_phys[0:10] * vals[0:10]}")
-                    print(f"total contributions from x Fy: {torque_integral}")
+                    print(f"Worker {worker_id}: torque contributions from x Fy: {x_phys[0:10] * vals[0:10]}")
+                    print(f"Worker {worker_id}: total contributions from x Fy: {torque_integral}")
             elif field == 'SURFACE_Z':
                 sur_z += integral
             elif field == 'RHO_ENERGY':
@@ -220,7 +249,7 @@ for frameidx, plt_dir in enumerate(plt_dirs):
     sumz_lv_field = {}                         # (lev, field)  -> 2-D array
     extent_lv     = {}                         # lev          -> [xmin, xmax, ymin, ymax]
 
-    print(f"levels_to_use for flux across BHs: {levels_to_use}")
+    print(f"Worker {worker_id}: levels_to_use for flux across BHs: {levels_to_use}")
     for lev in levels_to_use:
         # build a covering grid on that level only (no subtraction)
         cg = ds.covering_grid(level=lev,
@@ -332,39 +361,52 @@ for frameidx, plt_dir in enumerate(plt_dirs):
         elif fld == 'SURFACE_Z':
             sur_bh1_z, sur_bh2_z = integral_bh1, integral_bh2
 
-        print(f"integral of {fld} at frame {frameidx}: {integral_bh1} (BH1), {integral_bh2} (BH2)")
+        print(f"Worker {worker_id}: integral of {fld} at frame {global_frameidx}: {integral_bh1} (BH1), {integral_bh2} (BH2)")
     results.append([ds.current_time,
                 sur_x, sur_y, sur_z,          # outer surface
                 sur_bh1_x, sur_bh1_y, sur_bh1_z, # BH 1 
                 sur_bh2_x, sur_bh2_y, sur_bh2_z, # BH 2
-                rhoavg, sur_torque, sur_bh1_torque, sur_bh2_torque]) 
+                rhoavg, sur_torque, sur_bh1_torque, sur_bh2_torque])
+    
+    # Save intermediate results if requested
+    if temp_output:
+        np.save(f"{plotdir}/tmp/worker_{worker_id}/{simname}_2d_integrals_surface_outR{outR}_excise{excise_factor}_worker{worker_id}.npy", 
+                np.array(results))
 
-results = np.array(results)
-np.save(f"{simname}_2d_integrals_surface_outR{outR}_excise{excise_factor}.npy", results)
+# Save worker results
+output_filename = f"{simname}_2d_integrals_surface_outR{outR}_excise{excise_factor}_worker{worker_id}.npy"
+np.save(output_filename, np.array(results))
+print(f"Worker {worker_id}: Saved results to {output_filename}")
 
-plt.figure()
-plt.plot(results[:,0], results[:,1], label='SURFACE_X')
-plt.plot(results[:,0], results[:,2], label='SURFACE_Y')
-plt.plot(results[:,0], results[:,3], label='SURFACE_Z')
-plt.plot(results[:,0], results[:,10], label='rhoavg')
-plt.plot(results[:,0], results[:,11], label='sur_torque')
-plt.xlabel('Time')
-plt.ylabel('2D Integral')
-plt.legend()
-plt.savefig(f"{simname}_2d_surface_integrals_outR{outR}.png")
-plt.close()
+# Only create plots for worker 0 or if requested
+if worker_id == 0 or total_workers == 1:
+    results_array = np.array(results)
+    
+    plt.figure()
+    plt.plot(results_array[:,0], results_array[:,1], label='SURFACE_X')
+    plt.plot(results_array[:,0], results_array[:,2], label='SURFACE_Y')
+    plt.plot(results_array[:,0], results_array[:,3], label='SURFACE_Z')
+    plt.plot(results_array[:,0], results_array[:,10], label='rhoavg')
+    plt.plot(results_array[:,0], results_array[:,11], label='sur_torque')
+    plt.xlabel('Time')
+    plt.ylabel('2D Integral')
+    plt.legend()
+    plt.savefig(f"{simname}_2d_surface_integrals_outR{outR}_worker{worker_id}.png")
+    plt.close()
 
-plt.figure()
-plt.plot(results[:,0], results[:,4], label='SURFACE_X BH1')
-plt.plot(results[:,0], results[:,5], label='SURFACE_Y BH1')
-plt.plot(results[:,0], results[:,6], label='SURFACE_Z BH1')
-plt.plot(results[:,0], results[:,7], label='SURFACE_X BH2')
-plt.plot(results[:,0], results[:,8], label='SURFACE_Y BH2')
-plt.plot(results[:,0], results[:,9], label='SURFACE_Z BH2')
-plt.plot(results[:,0], results[:,12], label='sur_bh1_torque')
-plt.plot(results[:,0], results[:,13], label='sur_bh2_torque')
-plt.xlabel('Time')
-plt.ylabel('2D Integral')
-plt.legend()
-plt.savefig(f"{simname}_2d_surface_integrals_bh_excise{excise_factor}.png")
-plt.close()
+    plt.figure()
+    plt.plot(results_array[:,0], results_array[:,4], label='SURFACE_X BH1')
+    plt.plot(results_array[:,0], results_array[:,5], label='SURFACE_Y BH1')
+    plt.plot(results_array[:,0], results_array[:,6], label='SURFACE_Z BH1')
+    plt.plot(results_array[:,0], results_array[:,7], label='SURFACE_X BH2')
+    plt.plot(results_array[:,0], results_array[:,8], label='SURFACE_Y BH2')
+    plt.plot(results_array[:,0], results_array[:,9], label='SURFACE_Z BH2')
+    plt.plot(results_array[:,0], results_array[:,12], label='sur_bh1_torque')
+    plt.plot(results_array[:,0], results_array[:,13], label='sur_bh2_torque')
+    plt.xlabel('Time')
+    plt.ylabel('2D Integral')
+    plt.legend()
+    plt.savefig(f"{simname}_2d_surface_integrals_bh_excise{excise_factor}_worker{worker_id}.png")
+    plt.close()
+
+print(f"Worker {worker_id}: Finished processing {len(plt_dirs)} frames.") 

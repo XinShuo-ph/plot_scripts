@@ -1,0 +1,1963 @@
+Starting parallel processing for 250514_BBH_r70 with 64 workers
+----------------------------------------------------------------------
+Volume processing settings:
+  Fix metric error: true
+  psipow: 0
+----------------------------------------------------------------------
+Surface processing settings:
+  psipow: 0
+----------------------------------------------------------------------
+Common settings:
+  Skip every: 1
+  Inner radius: -1
+  Output plots: false
+  Temporary output: false
+----------------------------------------------------------------------
+Running test_integrate_2d_parallel.py with 64 workers...
+Parameters: simname=250514_BBH_r70, outR=160.0, excise_factor=1.5, maxframes=64
+Executing commands:
+  python test_integrate_2d_parallel.py --worker_id 0 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 1 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 2 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 3 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 4 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 5 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 6 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 7 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 8 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 9 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 10 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 11 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 12 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 13 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 14 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 15 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 16 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 17 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 18 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 19 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 20 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 21 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 22 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 23 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 24 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 25 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 26 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 27 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 28 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 29 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 30 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 31 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 32 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 33 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 34 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 35 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 36 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 37 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 38 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 39 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 40 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 41 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 42 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 43 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 44 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 45 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 46 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 47 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 48 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 49 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 50 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 51 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 52 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 53 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 54 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 55 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 56 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 57 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 58 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 59 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 60 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 61 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 62 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+  python test_integrate_2d_parallel.py --worker_id 63 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 --fix_metric_error 
+yt : [INFO     ] 2025-05-29 18:41:06,744 Parameters: current_time              = 2950.00268554688
+yt : [INFO     ] 2025-05-29 18:41:06,745 Parameters: current_time              = 3000.00073242188
+yt : [INFO     ] 2025-05-29 18:41:06,745 Parameters: current_time              = 3150.00469970703
+yt : [INFO     ] 2025-05-29 18:41:06,745 Parameters: current_time              = 2500.00061035156
+yt : [INFO     ] 2025-05-29 18:41:06,745 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,745 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,745 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,745 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,745 Parameters: current_time              = 1250.00030517578
+yt : [INFO     ] 2025-05-29 18:41:06,745 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,745 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,746 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,745 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,746 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,746 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,746 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,746 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,746 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,746 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,746 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,752 Parameters: current_time              = 2700.00262451172
+yt : [INFO     ] 2025-05-29 18:41:06,752 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,752 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,753 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,763 Parameters: current_time              = 2750.00067138672
+yt : [INFO     ] 2025-05-29 18:41:06,763 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,763 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,764 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,773 Parameters: current_time              = 150.003967285156
+yt : [INFO     ] 2025-05-29 18:41:06,773 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,774 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,774 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,794 Parameters: current_time              = 1900.00439453125
+yt : [INFO     ] 2025-05-29 18:41:06,794 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,794 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,795 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,797 Parameters: current_time              = 100.005920410156
+yt : [INFO     ] 2025-05-29 18:41:06,797 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,797 Parameters: current_time              = 850.006103515625
+yt : [INFO     ] 2025-05-29 18:41:06,797 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,797 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,797 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,797 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,798 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,801 Parameters: current_time              = 2350.00646972656
+yt : [INFO     ] 2025-05-29 18:41:06,801 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,802 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,802 Parameters: current_time              = 500.000122070312
+yt : [INFO     ] 2025-05-29 18:41:06,802 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,802 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,802 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,802 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,805 Parameters: current_time              = 950.002197265625
+yt : [INFO     ] 2025-05-29 18:41:06,805 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,806 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,806 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,818 Parameters: current_time              = 800.008056640625
+yt : [INFO     ] 2025-05-29 18:41:06,818 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,818 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,818 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,820 Parameters: current_time              = 1000.00024414062
+yt : [INFO     ] 2025-05-29 18:41:06,820 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,820 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,821 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,822 Parameters: current_time              = 1600.00628662109
+yt : [INFO     ] 2025-05-29 18:41:06,822 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,822 Parameters: current_time              = 1300.00817871094
+yt : [INFO     ] 2025-05-29 18:41:06,822 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,822 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,822 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,822 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,823 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,823 Parameters: current_time              = 2050.00836181641
+yt : [INFO     ] 2025-05-29 18:41:06,823 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,823 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,823 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,824 Parameters: current_time              = 1350.00622558594
+yt : [INFO     ] 2025-05-29 18:41:06,824 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,824 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,824 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,824 Parameters: current_time              = 2800.00854492188
+yt : [INFO     ] 2025-05-29 18:41:06,825 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,825 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,825 Parameters: current_time              = 1950.00244140625
+yt : [INFO     ] 2025-05-29 18:41:06,825 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,825 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,825 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,826 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,827 Parameters: current_time              = 1650.00433349609
+yt : [INFO     ] 2025-05-29 18:41:06,827 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,828 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,828 Parameters: current_time              = 1450.00231933594
+yt : [INFO     ] 2025-05-29 18:41:06,828 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,828 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,828 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,829 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,829 Parameters: current_time              = 2600.00653076172
+yt : [INFO     ] 2025-05-29 18:41:06,829 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,829 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,829 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,831 Parameters: current_time              = 1400.00427246094
+yt : [INFO     ] 2025-05-29 18:41:06,831 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,831 Parameters: current_time              = 2850.00659179688
+yt : [INFO     ] 2025-05-29 18:41:06,831 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,832 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,832 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,832 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,832 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,833 Parameters: current_time              = 400.004028320312
+yt : [INFO     ] 2025-05-29 18:41:06,833 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,833 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,833 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,834 Parameters: current_time              = 1800.00830078125
+yt : [INFO     ] 2025-05-29 18:41:06,835 Parameters: current_time              = 200.002014160156
+yt : [INFO     ] 2025-05-29 18:41:06,834 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,835 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,835 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,835 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,835 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,835 Parameters: current_time              = 1200.00225830078
+yt : [INFO     ] 2025-05-29 18:41:06,835 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,835 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,836 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,836 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,837 Parameters: current_time              = 350.005981445312
+yt : [INFO     ] 2025-05-29 18:41:06,837 Parameters: current_time              = 900.004150390625
+yt : [INFO     ] 2025-05-29 18:41:06,837 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,837 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,837 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,837 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,838 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,838 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,840 Parameters: current_time              = 1100.00616455078
+yt : [INFO     ] 2025-05-29 18:41:06,840 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,840 Parameters: current_time              = 1750.00042724609
+yt : [INFO     ] 2025-05-29 18:41:06,840 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,840 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,840 Parameters: current_time              = 300.007934570312
+yt : [INFO     ] 2025-05-29 18:41:06,840 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,840 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,841 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,841 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,841 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,841 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,842 Parameters: current_time              = 1050.00811767578
+yt : [INFO     ] 2025-05-29 18:41:06,842 Parameters: current_time              = 1150.00421142578
+yt : [INFO     ] 2025-05-29 18:41:06,842 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,842 Parameters: current_time              = 2100.00640869141
+yt : [INFO     ] 2025-05-29 18:41:06,842 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,842 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,842 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,842 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,843 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,843 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,843 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,843 Parameters: current_time              = 1850.00634765625
+yt : [INFO     ] 2025-05-29 18:41:06,843 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,843 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,843 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,843 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,844 Parameters: current_time              = 250.000061035156
+yt : [INFO     ] 2025-05-29 18:41:06,844 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,844 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,844 Parameters: current_time              = 2300.00842285156
+yt : [INFO     ] 2025-05-29 18:41:06,844 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,844 Parameters: current_time              = 2250.00054931641
+yt : [INFO     ] 2025-05-29 18:41:06,845 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,845 Parameters: current_time              = 2400.00451660156
+yt : [INFO     ] 2025-05-29 18:41:06,845 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,845 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,845 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,845 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,845 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,845 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,845 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,845 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,846 Parameters: current_time              = 2000.00048828125
+yt : [INFO     ] 2025-05-29 18:41:06,846 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,846 Parameters: current_time              = 1700.00238037109
+yt : [INFO     ] 2025-05-29 18:41:06,846 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,846 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,846 Parameters: current_time              = 2150.00445556641
+yt : [INFO     ] 2025-05-29 18:41:06,846 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,846 Parameters: current_time              = 550.007995605469
+yt : [INFO     ] 2025-05-29 18:41:06,846 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,847 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,847 Parameters: current_time              = 750.000183105469
+yt : [INFO     ] 2025-05-29 18:41:06,847 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,847 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,847 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,847 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,847 Parameters: current_time              = 1500.00036621094
+yt : [INFO     ] 2025-05-29 18:41:06,847 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,847 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,847 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,847 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,847 Parameters: current_time              = 3050.00860595703
+yt : [INFO     ] 2025-05-29 18:41:06,847 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,847 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,847 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,847 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,848 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,848 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,848 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,848 Parameters: current_time              = 650.004089355469
+yt : [INFO     ] 2025-05-29 18:41:06,848 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,848 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,849 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,851 Parameters: current_time              = 2650.00457763672
+yt : [INFO     ] 2025-05-29 18:41:06,851 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,851 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,851 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,852 Parameters: current_time              = 2450.00256347656
+yt : [INFO     ] 2025-05-29 18:41:06,852 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,852 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,852 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,854 Parameters: current_time              = 2200.00250244141
+yt : [INFO     ] 2025-05-29 18:41:06,854 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,854 Parameters: current_time              = 2550.00848388672
+yt : [INFO     ] 2025-05-29 18:41:06,854 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,855 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,855 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,855 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,855 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,857 Parameters: current_time              = 600.006042480469
+yt : [INFO     ] 2025-05-29 18:41:06,857 Parameters: current_time              = 700.002136230469
+yt : [INFO     ] 2025-05-29 18:41:06,857 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,857 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,857 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,857 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,857 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,857 Parameters: current_time              = 2900.00463867188
+yt : [INFO     ] 2025-05-29 18:41:06,857 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,857 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,858 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,858 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,860 Parameters: current_time              = 3100.00665283203
+yt : [INFO     ] 2025-05-29 18:41:06,860 Parameters: current_time              = 3200.00274658203
+yt : [INFO     ] 2025-05-29 18:41:06,860 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,860 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,860 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,861 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,861 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,861 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,869 Parameters: current_time              = 450.002075195312
+yt : [INFO     ] 2025-05-29 18:41:06,869 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,869 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,870 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,882 Parameters: current_time              = 50.0078735351562
+yt : [INFO     ] 2025-05-29 18:41:06,882 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,883 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,883 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:06,892 Parameters: current_time              = 1550.00823974609
+yt : [INFO     ] 2025-05-29 18:41:06,892 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:06,892 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:06,893 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+/pscratch/sd/x/xinshuo/miniconda3/lib/python3.12/site-packages/unyt/array.py:1949: RuntimeWarning: divide by zero encountered in divide
+  out_arr = func(
+Worker 35/64 processing 1 frames from index 35 to 35
+Worker 35: Processing frame 35 (plt183176)
+Worker 35: skipping level 0
+Worker 35: skipping level 1
+Worker 35: skipping level 2
+Worker 35: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker35.npy
+Worker 35: Finished processing 1 frames.
+Worker 9/64 processing 1 frames from index 9 to 9
+Worker 9: Processing frame 9 (plt50882)
+Worker 9: skipping level 0
+Worker 9: skipping level 1
+Worker 9: skipping level 2
+Worker 9: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker9.npy
+Worker 9: Finished processing 1 frames.
+Worker 13/64 processing 1 frames from index 13 to 13
+Worker 13: Processing frame 13 (plt71235)
+Worker 13: skipping level 0
+Worker 13: skipping level 1
+Worker 13: skipping level 2
+Worker 13: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker13.npy
+Worker 13: Finished processing 1 frames.
+Worker 29/64 processing 1 frames from index 29 to 29
+Worker 29: Processing frame 29 (plt152646)
+Worker 29: skipping level 0
+Worker 29: skipping level 1
+Worker 29: skipping level 2
+Worker 29: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker29.npy
+Worker 29: Finished processing 1 frames.
+Worker 26/64 processing 1 frames from index 26 to 26
+Worker 26: Processing frame 26 (plt137382)
+Worker 26: skipping level 0
+Worker 26: skipping level 1
+Worker 26: skipping level 2
+Worker 26: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker26.npy
+Worker 26: Finished processing 1 frames.
+Worker 33/64 processing 1 frames from index 33 to 33
+Worker 33: Processing frame 33 (plt172999)
+Worker 33: skipping level 0
+Worker 33: skipping level 1
+Worker 33: skipping level 2
+Worker 33: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker33.npy
+Worker 33: Finished processing 1 frames.
+Worker 37/64 processing 1 frames from index 37 to 37
+Worker 37: Processing frame 37 (plt193352)
+Worker 37: skipping level 0
+Worker 37: skipping level 1
+Worker 37: skipping level 2
+Worker 37: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker37.npy
+Worker 37: Finished processing 1 frames.
+Worker 44/64 processing 1 frames from index 44 to 44
+Worker 44: Processing frame 44 (plt228969)
+Worker 44: skipping level 0
+Worker 44: skipping level 1
+Worker 44: skipping level 2
+Worker 44: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker44.npy
+Worker 44: Finished processing 1 frames.
+Worker 10/64 processing 1 frames from index 10 to 10
+Worker 10: Processing frame 10 (plt55971)
+Worker 10: skipping level 0
+Worker 10: skipping level 1
+Worker 10: skipping level 2
+Worker 10: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker10.npy
+Worker 10: Finished processing 1 frames.
+Worker 5/64 processing 1 frames from index 5 to 5
+Worker 5: Processing frame 5 (plt30530)
+Worker 5: skipping level 0
+Worker 5: skipping level 1
+Worker 5: skipping level 2
+Worker 5: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker5.npy
+Worker 5: Finished processing 1 frames.
+Worker 49/64 processing 1 frames from index 49 to 49
+Worker 49: Processing frame 49 (plt254410)
+Worker 49: skipping level 0
+Worker 49: skipping level 1
+Worker 49: skipping level 2
+Worker 49: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker49.npy
+Worker 49: Finished processing 1 frames.
+Worker 58/64 processing 1 frames from index 58 to 58
+Worker 58: Processing frame 58 (plt300204)
+Worker 58: skipping level 0
+Worker 58: skipping level 1
+Worker 58: skipping level 2
+Worker 58: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker58.npy
+Worker 58: Finished processing 1 frames.
+Worker 54/64 processing 1 frames from index 54 to 54
+Worker 54: Processing frame 54 (plt279851)
+Worker 54: skipping level 0
+Worker 54: skipping level 1
+Worker 54: skipping level 2
+Worker 54: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker54.npy
+Worker 54: Finished processing 1 frames.
+Worker 31/64 processing 1 frames from index 31 to 31
+Worker 31: Processing frame 31 (plt162823)
+Worker 31: skipping level 0
+Worker 31: skipping level 1
+Worker 31: skipping level 2
+Worker 31: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker31.npy
+Worker 31: Finished processing 1 frames.
+Worker 62/64 processing 1 frames from index 62 to 62
+Worker 62: Processing frame 62 (plt320557)
+Worker 62: skipping level 0
+Worker 62: skipping level 1
+Worker 62: skipping level 2
+Worker 62: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker62.npy
+Worker 62: Finished processing 1 frames.
+Worker 17/64 processing 1 frames from index 17 to 17
+Worker 17: Processing frame 17 (plt91588)
+Worker 17: skipping level 0
+Worker 17: skipping level 1
+Worker 17: skipping level 2
+Worker 17: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker17.npy
+Worker 17: Finished processing 1 frames.
+Worker 53/64 processing 1 frames from index 53 to 53
+Worker 53: Processing frame 53 (plt274763)
+Worker 53: skipping level 0
+Worker 53: skipping level 1
+Worker 53: skipping level 2
+Worker 53: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker53.npy
+Worker 53: Finished processing 1 frames.
+Worker 1/64 processing 1 frames from index 1 to 1
+Worker 1: Processing frame 1 (plt10177)
+Worker 1: skipping level 0
+Worker 1: skipping level 1
+Worker 1: skipping level 2
+Worker 1: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker1.npy
+Worker 1: Finished processing 1 frames.
+Worker 3/64 processing 1 frames from index 3 to 3
+Worker 3: Processing frame 3 (plt20353)
+Worker 3: skipping level 0
+Worker 3: skipping level 1
+Worker 3: skipping level 2
+Worker 3: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker3.npy
+Worker 3: Finished processing 1 frames.
+Worker 4/64 processing 1 frames from index 4 to 4
+Worker 4: Processing frame 4 (plt25441)
+Worker 4: skipping level 0
+Worker 4: skipping level 1
+Worker 4: skipping level 2
+Worker 4: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker4.npy
+Worker 4: Finished processing 1 frames.
+Worker 6/64 processing 1 frames from index 6 to 6
+Worker 6: Processing frame 6 (plt35618)
+Worker 6: skipping level 0
+Worker 6: skipping level 1
+Worker 6: skipping level 2
+Worker 6: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker6.npy
+Worker 6: Finished processing 1 frames.
+Worker 15/64 processing 1 frames from index 15 to 15
+Worker 15: Processing frame 15 (plt81412)
+Worker 15: skipping level 0
+Worker 15: skipping level 1
+Worker 15: skipping level 2
+Worker 15: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker15.npy
+Worker 15: Finished processing 1 frames.
+Worker 61/64 processing 1 frames from index 61 to 61
+Worker 61: Processing frame 61 (plt315469)
+Worker 61: skipping level 0
+Worker 61: skipping level 1
+Worker 61: skipping level 2
+Worker 61: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker61.npy
+Worker 61: Finished processing 1 frames.
+Worker 56/64 processing 1 frames from index 56 to 56
+Worker 56: Processing frame 56 (plt290028)
+Worker 56: skipping level 0
+Worker 56: skipping level 1
+Worker 56: skipping level 2
+Worker 56: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker56.npy
+Worker 56: Finished processing 1 frames.
+Worker 28/64 processing 1 frames from index 28 to 28
+Worker 28: Processing frame 28 (plt147558)
+Worker 28: skipping level 0
+Worker 28: skipping level 1
+Worker 28: skipping level 2
+Worker 28: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker28.npy
+Worker 28: Finished processing 1 frames.
+Worker 24/64 processing 1 frames from index 24 to 24
+Worker 24: Processing frame 24 (plt127205)
+Worker 24: skipping level 0
+Worker 24: skipping level 1
+Worker 24: skipping level 2
+Worker 24: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker24.npy
+Worker 24: Finished processing 1 frames.
+Worker 45/64 processing 1 frames from index 45 to 45
+Worker 45: Processing frame 45 (plt234058)
+Worker 45: skipping level 0
+Worker 45: skipping level 1
+Worker 45: skipping level 2
+Worker 45: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker45.npy
+Worker 45: Finished processing 1 frames.
+Worker 42/64 processing 1 frames from index 42 to 42
+Worker 42: Processing frame 42 (plt218793)
+Worker 42: skipping level 0
+Worker 42: skipping level 1
+Worker 42: skipping level 2
+Worker 42: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker42.npy
+Worker 42: Finished processing 1 frames.
+Worker 25/64 processing 1 frames from index 25 to 25
+Worker 25: Processing frame 25 (plt132294)
+Worker 25: skipping level 0
+Worker 25: skipping level 1
+Worker 25: skipping level 2
+Worker 25: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker25.npy
+Worker 25: Finished processing 1 frames.
+Worker 57/64 processing 1 frames from index 57 to 57
+Worker 57: Processing frame 57 (plt295116)
+Worker 57: skipping level 0
+Worker 57: skipping level 1
+Worker 57: skipping level 2
+Worker 57: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker57.npy
+Worker 57: Finished processing 1 frames.
+Worker 41/64 processing 1 frames from index 41 to 41
+Worker 41: Processing frame 41 (plt213705)
+Worker 41: skipping level 0
+Worker 41: skipping level 1
+Worker 41: skipping level 2
+Worker 41: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker41.npy
+Worker 41: Finished processing 1 frames.
+Worker 59/64 processing 1 frames from index 59 to 59
+Worker 59: Processing frame 59 (plt305292)
+Worker 59: skipping level 0
+Worker 59: skipping level 1
+Worker 59: skipping level 2
+Worker 59: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker59.npy
+Worker 59: Finished processing 1 frames.
+Worker 32/64 processing 1 frames from index 32 to 32
+Worker 32: Processing frame 32 (plt167911)
+Worker 32: skipping level 0
+Worker 32: skipping level 1
+Worker 32: skipping level 2
+Worker 32: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker32.npy
+Worker 32: Finished processing 1 frames.
+Worker 2/64 processing 1 frames from index 2 to 2
+Worker 2: Processing frame 2 (plt15265)
+Worker 2: skipping level 0
+Worker 2: skipping level 1
+Worker 2: skipping level 2
+Worker 2: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker2.npy
+Worker 2: Finished processing 1 frames.
+Worker 27/64 processing 1 frames from index 27 to 27
+Worker 27: Processing frame 27 (plt142470)
+Worker 27: skipping level 0
+Worker 27: skipping level 1
+Worker 27: skipping level 2
+Worker 27: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker27.npy
+Worker 27: Finished processing 1 frames.
+Worker 21/64 processing 1 frames from index 21 to 21
+Worker 21: Processing frame 21 (plt111941)
+Worker 21: skipping level 0
+Worker 21: skipping level 1
+Worker 21: skipping level 2
+Worker 21: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker21.npy
+Worker 21: Finished processing 1 frames.
+Worker 8/64 processing 1 frames from index 8 to 8
+Worker 8: Processing frame 8 (plt45794)
+Worker 8: skipping level 0
+Worker 8: skipping level 1
+Worker 8: skipping level 2
+Worker 8: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker8.npy
+Worker 8: Finished processing 1 frames.
+Worker 11/64 processing 1 frames from index 11 to 11
+Worker 11: Processing frame 11 (plt61059)
+Worker 11: skipping level 0
+Worker 11: skipping level 1
+Worker 11: skipping level 2
+Worker 11: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker11.npy
+Worker 11: Finished processing 1 frames.
+Worker 36/64 processing 1 frames from index 36 to 36
+Worker 36: Processing frame 36 (plt188264)
+Worker 36: skipping level 0
+Worker 36: skipping level 1
+Worker 36: skipping level 2
+Worker 36: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker36.npy
+Worker 36: Finished processing 1 frames.
+Worker 52/64 processing 1 frames from index 52 to 52
+Worker 52: Processing frame 52 (plt269675)
+Worker 52: skipping level 0
+Worker 52: skipping level 1
+Worker 52: skipping level 2
+Worker 52: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker52.npy
+Worker 52: Finished processing 1 frames.
+Worker 51/64 processing 1 frames from index 51 to 51
+Worker 51: Processing frame 51 (plt264587)
+Worker 51: skipping level 0
+Worker 51: skipping level 1
+Worker 51: skipping level 2
+Worker 51: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker51.npy
+Worker 51: Finished processing 1 frames.
+Worker 47/64 processing 1 frames from index 47 to 47
+Worker 47: Processing frame 47 (plt244234)
+Worker 47: skipping level 0
+Worker 47: skipping level 1
+Worker 47: skipping level 2
+Worker 47: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker47.npy
+Worker 47: Finished processing 1 frames.
+Worker 60/64 processing 1 frames from index 60 to 60
+Worker 60: Processing frame 60 (plt310381)
+Worker 60: skipping level 0
+Worker 60: skipping level 1
+Worker 60: skipping level 2
+Worker 60: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker60.npy
+Worker 60: Finished processing 1 frames.
+Worker 12/64 processing 1 frames from index 12 to 12
+Worker 12: Processing frame 12 (plt66147)
+Worker 12: skipping level 0
+Worker 12: skipping level 1
+Worker 12: skipping level 2
+Worker 12: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker12.npy
+Worker 12: Finished processing 1 frames.
+Worker 7/64 processing 1 frames from index 7 to 7
+Worker 7: Processing frame 7 (plt40706)
+Worker 7: skipping level 0
+Worker 7: skipping level 1
+Worker 7: skipping level 2
+Worker 7: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker7.npy
+Worker 7: Finished processing 1 frames.
+Worker 30/64 processing 1 frames from index 30 to 30
+Worker 30: Processing frame 30 (plt157735)
+Worker 30: skipping level 0
+Worker 30: skipping level 1
+Worker 30: skipping level 2
+Worker 30: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker30.npy
+Worker 30: Finished processing 1 frames.
+Worker 22/64 processing 1 frames from index 22 to 22
+Worker 22: Processing frame 22 (plt117029)
+Worker 22: skipping level 0
+Worker 22: skipping level 1
+Worker 22: skipping level 2
+Worker 22: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker22.npy
+Worker 22: Finished processing 1 frames.
+Worker 16/64 processing 1 frames from index 16 to 16
+Worker 16: Processing frame 16 (plt86500)
+Worker 16: skipping level 0
+Worker 16: skipping level 1
+Worker 16: skipping level 2
+Worker 16: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker16.npy
+Worker 16: Finished processing 1 frames.
+Worker 34/64 processing 1 frames from index 34 to 34
+Worker 34: Processing frame 34 (plt178087)
+Worker 34: skipping level 0
+Worker 34: skipping level 1
+Worker 34: skipping level 2
+Worker 34: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker34.npy
+Worker 34: Finished processing 1 frames.
+Worker 18/64 processing 1 frames from index 18 to 18
+Worker 18: Processing frame 18 (plt96676)
+Worker 18: skipping level 0
+Worker 18: skipping level 1
+Worker 18: skipping level 2
+Worker 18: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker18.npy
+Worker 18: Finished processing 1 frames.
+Worker 23/64 processing 1 frames from index 23 to 23
+Worker 23: Processing frame 23 (plt122117)
+Worker 23: skipping level 0
+Worker 23: skipping level 1
+Worker 23: skipping level 2
+Worker 23: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker23.npy
+Worker 23: Finished processing 1 frames.
+Worker 55/64 processing 1 frames from index 55 to 55
+Worker 55: Processing frame 55 (plt284940)
+Worker 55: skipping level 0
+Worker 55: skipping level 1
+Worker 55: skipping level 2
+Worker 55: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker55.npy
+Worker 55: Finished processing 1 frames.
+Worker 40/64 processing 1 frames from index 40 to 40
+Worker 40: Processing frame 40 (plt208617)
+Worker 40: skipping level 0
+Worker 40: skipping level 1
+Worker 40: skipping level 2
+Worker 40: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker40.npy
+Worker 40: Finished processing 1 frames.
+Worker 48/64 processing 1 frames from index 48 to 48
+Worker 48: Processing frame 48 (plt249322)
+Worker 48: skipping level 0
+Worker 48: skipping level 1
+Worker 48: skipping level 2
+Worker 48: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker48.npy
+Worker 48: Finished processing 1 frames.
+Worker 43/64 processing 1 frames from index 43 to 43
+Worker 43: Processing frame 43 (plt223881)
+Worker 43: skipping level 0
+Worker 43: skipping level 1
+Worker 43: skipping level 2
+Worker 43: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker43.npy
+Worker 43: Finished processing 1 frames.
+Worker 20/64 processing 1 frames from index 20 to 20
+Worker 20: Processing frame 20 (plt106853)
+Worker 20: skipping level 0
+Worker 20: skipping level 1
+Worker 20: skipping level 2
+Worker 20: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker20.npy
+Worker 20: Finished processing 1 frames.
+Worker 14/64 processing 1 frames from index 14 to 14
+Worker 14: Processing frame 14 (plt76323)
+Worker 14: skipping level 0
+Worker 14: skipping level 1
+Worker 14: skipping level 2
+Worker 14: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker14.npy
+Worker 14: Finished processing 1 frames.
+Worker 46/64 processing 1 frames from index 46 to 46
+Worker 46: Processing frame 46 (plt239146)
+Worker 46: skipping level 0
+Worker 46: skipping level 1
+Worker 46: skipping level 2
+Worker 46: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker46.npy
+Worker 46: Finished processing 1 frames.
+Worker 39/64 processing 1 frames from index 39 to 39
+Worker 39: Processing frame 39 (plt203528)
+Worker 39: skipping level 0
+Worker 39: skipping level 1
+Worker 39: skipping level 2
+Worker 39: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker39.npy
+Worker 39: Finished processing 1 frames.
+Worker 63/64 processing 1 frames from index 63 to 63
+Worker 63: Processing frame 63 (plt325645)
+Worker 63: skipping level 0
+Worker 63: skipping level 1
+Worker 63: skipping level 2
+Worker 63: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker63.npy
+Worker 63: Finished processing 1 frames.
+Worker 50/64 processing 1 frames from index 50 to 50
+Worker 50: Processing frame 50 (plt259499)
+Worker 50: skipping level 0
+Worker 50: skipping level 1
+Worker 50: skipping level 2
+Worker 50: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker50.npy
+Worker 50: Finished processing 1 frames.
+Worker 38/64 processing 1 frames from index 38 to 38
+Worker 38: Processing frame 38 (plt198440)
+Worker 38: skipping level 0
+Worker 38: skipping level 1
+Worker 38: skipping level 2
+Worker 38: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker38.npy
+Worker 38: Finished processing 1 frames.
+Worker 19/64 processing 1 frames from index 19 to 19
+Worker 19: Processing frame 19 (plt101764)
+Worker 19: skipping level 0
+Worker 19: skipping level 1
+Worker 19: skipping level 2
+Worker 19: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker19.npy
+Worker 19: Finished processing 1 frames.
+Worker 0/64 processing 1 frames from index 0 to 0
+Worker 0: Processing frame 0 (plt05089)
+Worker 0: skipping level 0
+Worker 0: skipping level 1
+Worker 0: skipping level 2
+Worker 0: Saved results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker0.npy
+Worker 0: Finished processing 1 frames.
+Workers execution time: 00:00:10
+Merging results: python merge_parallel_results.py --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --type volume --total_workers 64 --out_suffix parallel
+Found 64 worker files matching pattern: 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker*.npy
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker29.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker5.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker25.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker42.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker49.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker16.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker12.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker19.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker18.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker8.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker36.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker34.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker7.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker4.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker44.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker63.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker3.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker60.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker14.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker40.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker51.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker27.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker17.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker50.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker33.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker62.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker43.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker45.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker22.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker31.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker11.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker21.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker38.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker20.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker2.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker57.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker37.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker55.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker32.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker39.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker48.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker15.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker23.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker28.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker58.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker24.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker35.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker54.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker53.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker26.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker9.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker1.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker41.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker10.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker47.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker52.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker56.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker0.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker61.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker59.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker46.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker6.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker13.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_worker30.npy with 1 frames
+Saved combined results to 250514_BBH_r70_2d_integrals_outR160.0_excise1.5_parallel.npy with 64 total frames
+Created plots: 250514_BBH_r70_2d_volume_integrals_outR160.0_excise1.5_parallel.png and 250514_BBH_r70_2d_momentum_integrals_outR160.0_excise1.5_parallel.png
+Found reference file: /pscratch/sd/x/xinshuo/plotGReX/250514_BBH_r70_2d_integrals_outR160.0_excise1.5.npy
+Reference data shape: (144, 9)
+Combined data shape: (64, 9)
+✗ Frame count mismatch: Reference 144 vs Combined 64
+Common frames: [  50.00787354  100.00592041  150.00396729  200.00201416  250.00006104
+  300.00793457  350.00598145  400.00402832  450.0020752   500.00012207
+  550.00799561  600.00604248  650.00408936  700.00213623  750.00018311
+  800.00805664  850.00610352  900.00415039  950.00219727 1000.00024414
+ 1050.00811768 1100.00616455 1150.00421143 1200.0022583  1250.00030518
+ 1300.00817871 1350.00622559 1400.00427246 1450.00231934 1500.00036621
+ 1550.00823975 1600.00628662 1650.0043335  1700.00238037 1750.00042725
+ 1800.00830078 1850.00634766 1900.00439453 1950.00244141 2000.00048828
+ 2050.00836182 2100.00640869 2150.00445557 2200.00250244 2250.00054932
+ 2300.00842285 2350.00646973 2400.0045166  2450.00256348 2500.00061035
+ 2550.00848389 2600.00653076 2650.00457764 2700.00262451 2750.00067139
+ 2800.00854492 2850.0065918  2900.00463867 2950.00268555 3000.00073242
+ 3050.00860596 3100.00665283 3150.00469971 3200.00274658]
+✓ Time values match
+✓ Column 1 matches perfectly
+✓ Column 2 matches perfectly
+✓ Column 3 matches perfectly
+✓ Column 4 matches perfectly
+✓ Column 5 matches perfectly
+✓ Column 6 matches perfectly
+✓ Column 7 matches perfectly
+✓ Column 8 matches perfectly
+
+Summary of differences:
+Maximum relative difference: 0.0
+✓ Results match within expected numerical precision
+Merge execution time: 00:00:00
+Completed test_integrate_2d_parallel.py processing in 00:00:11
+----------------------------------------------------------------------
+Running test_integrate_2d_surface_parallel.py with 64 workers...
+Parameters: simname=250514_BBH_r70, outR=160.0, excise_factor=1.5, maxframes=64
+Executing commands:
+  python test_integrate_2d_surface_parallel.py --worker_id 0 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 1 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 2 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 3 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 4 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 5 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 6 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 7 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 8 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 9 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 10 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 11 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 12 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 13 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 14 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 15 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 16 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 17 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 18 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 19 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 20 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 21 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 22 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 23 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 24 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 25 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 26 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 27 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 28 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 29 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 30 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 31 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 32 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 33 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 34 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 35 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 36 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 37 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 38 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 39 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 40 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 41 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 42 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 43 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 44 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 45 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 46 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 47 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 48 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 49 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 50 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 51 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 52 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 53 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 54 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 55 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 56 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 57 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 58 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 59 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 60 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 61 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 62 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+  python test_integrate_2d_surface_parallel.py --worker_id 63 --total_workers 64 --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --maxframes 64 --skipevery 1 --innerR -1 --psipow 0 
+yt : [INFO     ] 2025-05-29 18:41:17,996 Parameters: current_time              = 450.002075195312
+yt : [INFO     ] 2025-05-29 18:41:17,997 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:17,997 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:17,998 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,000 Parameters: current_time              = 150.003967285156
+yt : [INFO     ] 2025-05-29 18:41:18,000 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,000 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,001 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,011 Parameters: current_time              = 1350.00622558594
+yt : [INFO     ] 2025-05-29 18:41:18,011 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,011 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,012 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,016 Parameters: current_time              = 100.005920410156
+yt : [INFO     ] 2025-05-29 18:41:18,017 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,017 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,017 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,028 Parameters: current_time              = 550.007995605469
+yt : [INFO     ] 2025-05-29 18:41:18,028 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,029 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,029 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,037 Parameters: current_time              = 1150.00421142578
+yt : [INFO     ] 2025-05-29 18:41:18,037 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,037 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,037 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,040 Parameters: current_time              = 750.000183105469
+yt : [INFO     ] 2025-05-29 18:41:18,040 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,040 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,041 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,052 Parameters: current_time              = 200.002014160156
+yt : [INFO     ] 2025-05-29 18:41:18,052 Parameters: current_time              = 1050.00811767578
+yt : [INFO     ] 2025-05-29 18:41:18,052 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,052 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,053 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,053 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,053 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,053 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,057 Parameters: current_time              = 50.0078735351562
+yt : [INFO     ] 2025-05-29 18:41:18,058 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,058 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,058 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,068 Parameters: current_time              = 350.005981445312
+yt : [INFO     ] 2025-05-29 18:41:18,068 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,069 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,069 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,077 Parameters: current_time              = 1100.00616455078
+yt : [INFO     ] 2025-05-29 18:41:18,077 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,077 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,077 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,081 Parameters: current_time              = 1650.00433349609
+yt : [INFO     ] 2025-05-29 18:41:18,081 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,082 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,082 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,101 Parameters: current_time              = 2400.00451660156
+yt : [INFO     ] 2025-05-29 18:41:18,101 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,101 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,101 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,111 Parameters: current_time              = 2500.00061035156
+yt : [INFO     ] 2025-05-29 18:41:18,112 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,112 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,112 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,114 Parameters: current_time              = 2650.00457763672
+yt : [INFO     ] 2025-05-29 18:41:18,115 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,115 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,115 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,116 Parameters: current_time              = 1700.00238037109
+yt : [INFO     ] 2025-05-29 18:41:18,116 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,116 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,116 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,118 Parameters: current_time              = 400.004028320312
+yt : [INFO     ] 2025-05-29 18:41:18,118 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,118 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,118 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,128 Parameters: current_time              = 300.007934570312
+yt : [INFO     ] 2025-05-29 18:41:18,128 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,129 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,129 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,134 Parameters: current_time              = 2200.00250244141
+yt : [INFO     ] 2025-05-29 18:41:18,134 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,134 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,134 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,135 Parameters: current_time              = 1850.00634765625
+yt : [INFO     ] 2025-05-29 18:41:18,135 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,135 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,135 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,139 Parameters: current_time              = 3050.00860595703
+yt : [INFO     ] 2025-05-29 18:41:18,139 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,140 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,140 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,152 Parameters: current_time              = 900.004150390625
+yt : [INFO     ] 2025-05-29 18:41:18,152 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,152 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,152 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,159 Parameters: current_time              = 2900.00463867188
+yt : [INFO     ] 2025-05-29 18:41:18,159 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,159 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,159 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,171 Parameters: current_time              = 1200.00225830078
+yt : [INFO     ] 2025-05-29 18:41:18,171 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,171 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,171 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,179 Parameters: current_time              = 500.000122070312
+yt : [INFO     ] 2025-05-29 18:41:18,179 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,179 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,179 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,186 Parameters: current_time              = 1300.00817871094
+yt : [INFO     ] 2025-05-29 18:41:18,186 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,186 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,186 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,190 Parameters: current_time              = 650.004089355469
+yt : [INFO     ] 2025-05-29 18:41:18,190 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,191 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,191 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,194 Parameters: current_time              = 2700.00262451172
+yt : [INFO     ] 2025-05-29 18:41:18,194 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,195 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,195 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,196 Parameters: current_time              = 1950.00244140625
+yt : [INFO     ] 2025-05-29 18:41:18,196 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,196 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,197 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,200 Parameters: current_time              = 600.006042480469
+yt : [INFO     ] 2025-05-29 18:41:18,200 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,200 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,200 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,206 Parameters: current_time              = 1800.00830078125
+yt : [INFO     ] 2025-05-29 18:41:18,206 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,207 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,207 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,216 Parameters: current_time              = 850.006103515625
+yt : [INFO     ] 2025-05-29 18:41:18,217 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,217 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,217 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,224 Parameters: current_time              = 1000.00024414062
+yt : [INFO     ] 2025-05-29 18:41:18,224 Parameters: current_time              = 2050.00836181641
+yt : [INFO     ] 2025-05-29 18:41:18,224 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,224 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,224 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,224 Parameters: current_time              = 1250.00030517578
+yt : [INFO     ] 2025-05-29 18:41:18,224 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,224 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,224 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,224 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,224 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,225 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,225 Parameters: current_time              = 3100.00665283203
+yt : [INFO     ] 2025-05-29 18:41:18,225 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,225 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,225 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,227 Parameters: current_time              = 1400.00427246094
+yt : [INFO     ] 2025-05-29 18:41:18,227 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,227 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,228 Parameters: current_time              = 1550.00823974609
+yt : [INFO     ] 2025-05-29 18:41:18,228 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,228 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,228 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,228 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,228 Parameters: current_time              = 1750.00042724609
+yt : [INFO     ] 2025-05-29 18:41:18,228 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,229 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,229 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,230 Parameters: current_time              = 950.002197265625
+yt : [INFO     ] 2025-05-29 18:41:18,230 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,230 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,230 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,231 Parameters: current_time              = 1600.00628662109
+yt : [INFO     ] 2025-05-29 18:41:18,231 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,231 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,232 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,233 Parameters: current_time              = 2550.00848388672
+yt : [INFO     ] 2025-05-29 18:41:18,233 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,234 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,234 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,235 Parameters: current_time              = 250.000061035156
+yt : [INFO     ] 2025-05-29 18:41:18,235 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,236 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,236 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,236 Parameters: current_time              = 3150.00469970703
+yt : [INFO     ] 2025-05-29 18:41:18,236 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,236 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,237 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,240 Parameters: current_time              = 2000.00048828125
+yt : [INFO     ] 2025-05-29 18:41:18,240 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,241 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,241 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,241 Parameters: current_time              = 3000.00073242188
+yt : [INFO     ] 2025-05-29 18:41:18,241 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,241 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,242 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,242 Parameters: current_time              = 2450.00256347656
+yt : [INFO     ] 2025-05-29 18:41:18,243 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,243 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,243 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,246 Parameters: current_time              = 2750.00067138672
+yt : [INFO     ] 2025-05-29 18:41:18,246 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,246 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,246 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,246 Parameters: current_time              = 2800.00854492188
+yt : [INFO     ] 2025-05-29 18:41:18,247 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,247 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,247 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,252 Parameters: current_time              = 2950.00268554688
+yt : [INFO     ] 2025-05-29 18:41:18,253 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,253 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,253 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,264 Parameters: current_time              = 2600.00653076172
+yt : [INFO     ] 2025-05-29 18:41:18,264 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,264 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,265 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,266 Parameters: current_time              = 2250.00054931641
+yt : [INFO     ] 2025-05-29 18:41:18,266 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,267 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,267 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,270 Parameters: current_time              = 1450.00231933594
+yt : [INFO     ] 2025-05-29 18:41:18,270 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,271 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,271 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,271 Parameters: current_time              = 1900.00439453125
+yt : [INFO     ] 2025-05-29 18:41:18,271 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,272 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,272 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,275 Parameters: current_time              = 2300.00842285156
+yt : [INFO     ] 2025-05-29 18:41:18,275 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,275 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,276 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,276 Parameters: current_time              = 2850.00659179688
+yt : [INFO     ] 2025-05-29 18:41:18,277 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,277 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,278 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,283 Parameters: current_time              = 3200.00274658203
+yt : [INFO     ] 2025-05-29 18:41:18,283 Parameters: current_time              = 2350.00646972656
+yt : [INFO     ] 2025-05-29 18:41:18,283 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,283 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,284 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,284 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,284 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,284 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,286 Parameters: current_time              = 2100.00640869141
+yt : [INFO     ] 2025-05-29 18:41:18,287 Parameters: current_time              = 700.002136230469
+yt : [INFO     ] 2025-05-29 18:41:18,287 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,287 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,287 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,287 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,287 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,287 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,310 Parameters: current_time              = 800.008056640625
+yt : [INFO     ] 2025-05-29 18:41:18,310 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,311 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,311 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,328 Parameters: current_time              = 1500.00036621094
+yt : [INFO     ] 2025-05-29 18:41:18,328 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,329 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,329 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+yt : [INFO     ] 2025-05-29 18:41:18,336 Parameters: current_time              = 2150.00445556641
+yt : [INFO     ] 2025-05-29 18:41:18,336 Parameters: domain_dimensions         = [640 640   1]
+yt : [INFO     ] 2025-05-29 18:41:18,337 Parameters: domain_left_edge          = [-1610. -1610.     0.]
+yt : [INFO     ] 2025-05-29 18:41:18,337 Parameters: domain_right_edge         = [1.61e+03 1.61e+03 1.00e+00]
+Worker 2/64 processing 1 frames from index 2 to 2
+Worker 2: Processing frame 2 (plt15265)
+Worker 2: levels_to_use for flux across BHs: [6, 7]
+Worker 2: integral of SURFACE_X at frame 2: 0.0025416077713466875 (BH1), 0.0007909005178826821 (BH2)
+Worker 2: integral of SURFACE_Y at frame 2: -0.0006491603582641114 (BH1), 0.0001768289564556683 (BH2)
+Worker 2: integral of SURFACE_Z at frame 2: 0.0 (BH1), 0.0 (BH2)
+Worker 2: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker2.npy
+Worker 2: Finished processing 1 frames.
+Worker 26/64 processing 1 frames from index 26 to 26
+Worker 26: Processing frame 26 (plt137382)
+Worker 26: levels_to_use for flux across BHs: [6, 7]
+Worker 26: integral of SURFACE_X at frame 26: 0.0022905670512489602 (BH1), 0.0013975540054359133 (BH2)
+Worker 26: integral of SURFACE_Y at frame 26: 0.00010187492047309912 (BH1), -9.308516696972824e-05 (BH2)
+Worker 26: integral of SURFACE_Z at frame 26: 0.0 (BH1), 0.0 (BH2)
+Worker 26: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker26.npy
+Worker 26: Finished processing 1 frames.
+Worker 14/64 processing 1 frames from index 14 to 14
+Worker 14: Processing frame 14 (plt76323)
+Worker 14: levels_to_use for flux across BHs: [6, 7]
+Worker 14: integral of SURFACE_X at frame 14: 0.0019060506334081721 (BH1), 0.0022617481609872054 (BH2)
+Worker 14: integral of SURFACE_Y at frame 14: 0.00024109140340563878 (BH1), -0.00032924411480191376 (BH2)
+Worker 14: integral of SURFACE_Z at frame 14: 0.0 (BH1), 0.0 (BH2)
+Worker 14: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker14.npy
+Worker 14: Finished processing 1 frames.
+Worker 10/64 processing 1 frames from index 10 to 10
+Worker 10: Processing frame 10 (plt55971)
+Worker 10: levels_to_use for flux across BHs: [6, 7]
+Worker 10: integral of SURFACE_X at frame 10: 0.002466309386084801 (BH1), 0.0022739728041110737 (BH2)
+Worker 10: integral of SURFACE_Y at frame 10: 0.0007236969090455056 (BH1), -0.0006722127042893617 (BH2)
+Worker 10: integral of SURFACE_Z at frame 10: 0.0 (BH1), 0.0 (BH2)
+Worker 10: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker10.npy
+Worker 10: Finished processing 1 frames.
+Worker 23/64 processing 1 frames from index 23 to 23
+Worker 23: Processing frame 23 (plt122117)
+Worker 23: levels_to_use for flux across BHs: [6, 7]
+Worker 23: integral of SURFACE_X at frame 23: 0.001997049623515072 (BH1), 0.0018452856427092453 (BH2)
+Worker 23: integral of SURFACE_Y at frame 23: -0.00028448524737429223 (BH1), 0.0003816525678066397 (BH2)
+Worker 23: integral of SURFACE_Z at frame 23: 0.0 (BH1), 0.0 (BH2)
+Worker 23: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker23.npy
+Worker 23: Finished processing 1 frames.
+Worker 20/64 processing 1 frames from index 20 to 20
+Worker 20: Processing frame 20 (plt106853)
+Worker 20: levels_to_use for flux across BHs: [6, 7]
+Worker 20: integral of SURFACE_X at frame 20: 0.0025967507803086446 (BH1), 0.0003703371451573498 (BH2)
+Worker 20: integral of SURFACE_Y at frame 20: -0.0004111456377910576 (BH1), 0.00013067935647191113 (BH2)
+Worker 20: integral of SURFACE_Z at frame 20: 0.0 (BH1), 0.0 (BH2)
+Worker 20: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker20.npy
+Worker 20: Finished processing 1 frames.
+Worker 22/64 processing 1 frames from index 22 to 22
+Worker 22: Processing frame 22 (plt117029)
+Worker 22: levels_to_use for flux across BHs: [6, 7]
+Worker 22: integral of SURFACE_X at frame 22: 0.0027800005225022614 (BH1), 0.0029680918100785077 (BH2)
+Worker 22: integral of SURFACE_Y at frame 22: -0.00015692790288023573 (BH1), -0.0007951950252130928 (BH2)
+Worker 22: integral of SURFACE_Z at frame 22: 0.0 (BH1), 0.0 (BH2)
+Worker 22: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker22.npy
+Worker 22: Finished processing 1 frames.
+Worker 8/64 processing 1 frames from index 8 to 8
+Worker 8: Processing frame 8 (plt45794)
+Worker 8: levels_to_use for flux across BHs: [6, 7]
+Worker 8: integral of SURFACE_X at frame 8: 0.0029245215996924353 (BH1), 0.0020765400554006923 (BH2)
+Worker 8: integral of SURFACE_Y at frame 8: 0.00035796515639486285 (BH1), -0.0008501085294519029 (BH2)
+Worker 8: integral of SURFACE_Z at frame 8: 0.0 (BH1), 0.0 (BH2)
+Worker 8: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker8.npy
+Worker 8: Finished processing 1 frames.
+Worker 49/64 processing 1 frames from index 49 to 49
+Worker 49: Processing frame 49 (plt254410)
+Worker 49: levels_to_use for flux across BHs: [6, 7]
+Worker 49: integral of SURFACE_X at frame 49: 0.0026179211767412723 (BH1), 0.003448786854580844 (BH2)
+Worker 49: integral of SURFACE_Y at frame 49: 0.0004428907508481145 (BH1), -0.0004849596126926781 (BH2)
+Worker 49: integral of SURFACE_Z at frame 49: 0.0 (BH1), 0.0 (BH2)
+Worker 49: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker49.npy
+Worker 49: Finished processing 1 frames.
+Worker 1/64 processing 1 frames from index 1 to 1
+Worker 1: Processing frame 1 (plt10177)
+Worker 1: levels_to_use for flux across BHs: [6, 7]
+Worker 1: integral of SURFACE_X at frame 1: 0.0019298245149188893 (BH1), 0.0018417181294836285 (BH2)
+Worker 1: integral of SURFACE_Y at frame 1: -0.0005591656438696343 (BH1), 0.0004004826721323646 (BH2)
+Worker 1: integral of SURFACE_Z at frame 1: 0.0 (BH1), 0.0 (BH2)
+Worker 1: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker1.npy
+Worker 1: Finished processing 1 frames.
+Worker 32/64 processing 1 frames from index 32 to 32
+Worker 32: Processing frame 32 (plt167911)
+Worker 32: levels_to_use for flux across BHs: [6, 7]
+Worker 32: integral of SURFACE_X at frame 32: 0.0019996781951435554 (BH1), 0.004106145946284439 (BH2)
+Worker 32: integral of SURFACE_Y at frame 32: 0.0005182681215815274 (BH1), -0.0004523576023388022 (BH2)
+Worker 32: integral of SURFACE_Z at frame 32: 0.0 (BH1), 0.0 (BH2)
+Worker 32: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker32.npy
+Worker 32: Finished processing 1 frames.
+Worker 57/64 processing 1 frames from index 57 to 57
+Worker 57: Processing frame 57 (plt295116)
+Worker 57: levels_to_use for flux across BHs: [6, 7]
+Worker 57: integral of SURFACE_X at frame 57: 0.0020057274700872527 (BH1), 0.002807520602941343 (BH2)
+Worker 57: integral of SURFACE_Y at frame 57: -0.00014861420034091756 (BH1), -1.5447573596400652e-05 (BH2)
+Worker 57: integral of SURFACE_Z at frame 57: 0.0 (BH1), 0.0 (BH2)
+Worker 57: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker57.npy
+Worker 57: Finished processing 1 frames.
+Worker 6/64 processing 1 frames from index 6 to 6
+Worker 6: Processing frame 6 (plt35618)
+Worker 6: levels_to_use for flux across BHs: [6, 7]
+Worker 6: integral of SURFACE_X at frame 6: 0.0021256577510239227 (BH1), 0.0012177389410180958 (BH2)
+Worker 6: integral of SURFACE_Y at frame 6: -0.00021186488582881587 (BH1), 8.790519682474057e-05 (BH2)
+Worker 6: integral of SURFACE_Z at frame 6: 0.0 (BH1), 0.0 (BH2)
+Worker 6: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker6.npy
+Worker 6: Finished processing 1 frames.
+Worker 60/64 processing 1 frames from index 60 to 60
+Worker 60: Processing frame 60 (plt310381)
+Worker 60: levels_to_use for flux across BHs: [6, 7]
+Worker 60: integral of SURFACE_X at frame 60: 0.004357601543984277 (BH1), 0.002460995315835687 (BH2)
+Worker 60: integral of SURFACE_Y at frame 60: 0.0004952385637260957 (BH1), -0.0010359351795216605 (BH2)
+Worker 60: integral of SURFACE_Z at frame 60: 0.0 (BH1), 0.0 (BH2)
+Worker 60: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker60.npy
+Worker 60: Finished processing 1 frames.
+Worker 50/64 processing 1 frames from index 50 to 50
+Worker 50: Processing frame 50 (plt259499)
+Worker 50: levels_to_use for flux across BHs: [6, 7]
+Worker 50: integral of SURFACE_X at frame 50: 0.0014986480036818899 (BH1), 0.0044616829383218645 (BH2)
+Worker 50: integral of SURFACE_Y at frame 50: -0.00018099536006443095 (BH1), -0.00015841844871506065 (BH2)
+Worker 50: integral of SURFACE_Z at frame 50: 0.0 (BH1), 0.0 (BH2)
+Worker 50: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker50.npy
+Worker 50: Finished processing 1 frames.
+Worker 9/64 processing 1 frames from index 9 to 9
+Worker 9: Processing frame 9 (plt50882)
+Worker 9: levels_to_use for flux across BHs: [6, 7]
+Worker 9: integral of SURFACE_X at frame 9: 0.002964809132953425 (BH1), 0.0020853958022337784 (BH2)
+Worker 9: integral of SURFACE_Y at frame 9: 0.0003939427562975834 (BH1), -0.00043681470733549123 (BH2)
+Worker 9: integral of SURFACE_Z at frame 9: 0.0 (BH1), 0.0 (BH2)
+Worker 9: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker9.npy
+Worker 9: Finished processing 1 frames.
+Worker 62/64 processing 1 frames from index 62 to 62
+Worker 62: Processing frame 62 (plt320557)
+Worker 62: levels_to_use for flux across BHs: [6, 7]
+Worker 62: integral of SURFACE_X at frame 62: 0.003891084588837933 (BH1), 0.0034536351270451995 (BH2)
+Worker 62: integral of SURFACE_Y at frame 62: 0.000868068850166552 (BH1), -0.0011441812539652722 (BH2)
+Worker 62: integral of SURFACE_Z at frame 62: 0.0 (BH1), 0.0 (BH2)
+Worker 62: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker62.npy
+Worker 62: Finished processing 1 frames.
+Worker 36/64 processing 1 frames from index 36 to 36
+Worker 36: Processing frame 36 (plt188264)
+Worker 36: levels_to_use for flux across BHs: [6, 7]
+Worker 36: integral of SURFACE_X at frame 36: 0.0032975718843272135 (BH1), 0.003774753091125854 (BH2)
+Worker 36: integral of SURFACE_Y at frame 36: -0.0009741860055883029 (BH1), 0.0008259021494331726 (BH2)
+Worker 36: integral of SURFACE_Z at frame 36: 0.0 (BH1), 0.0 (BH2)
+Worker 36: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker36.npy
+Worker 36: Finished processing 1 frames.
+Worker 5/64 processing 1 frames from index 5 to 5
+Worker 5: Processing frame 5 (plt30530)
+Worker 5: levels_to_use for flux across BHs: [6, 7]
+Worker 5: integral of SURFACE_X at frame 5: 0.0013603689620423525 (BH1), 0.0015861746032601487 (BH2)
+Worker 5: integral of SURFACE_Y at frame 5: -1.9181180428696646e-05 (BH1), 0.00011310190791647124 (BH2)
+Worker 5: integral of SURFACE_Z at frame 5: 0.0 (BH1), 0.0 (BH2)
+Worker 5: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker5.npy
+Worker 5: Finished processing 1 frames.
+Worker 58/64 processing 1 frames from index 58 to 58
+Worker 58: Processing frame 58 (plt300204)
+Worker 58: levels_to_use for flux across BHs: [6, 7]
+Worker 58: integral of SURFACE_X at frame 58: 0.0027553922990560848 (BH1), 0.00182027951879263 (BH2)
+Worker 58: integral of SURFACE_Y at frame 58: -0.0003572684830563957 (BH1), 0.00022123853147784682 (BH2)
+Worker 58: integral of SURFACE_Z at frame 58: 0.0 (BH1), 0.0 (BH2)
+Worker 58: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker58.npy
+Worker 58: Finished processing 1 frames.
+Worker 21/64 processing 1 frames from index 21 to 21
+Worker 21: Processing frame 21 (plt111941)
+Worker 21: levels_to_use for flux across BHs: [6, 7]
+Worker 21: integral of SURFACE_X at frame 21: 0.0028569431754437795 (BH1), 0.0008407095351038275 (BH2)
+Worker 21: integral of SURFACE_Y at frame 21: 1.3989043486328893e-05 (BH1), -0.0010813844942878922 (BH2)
+Worker 21: integral of SURFACE_Z at frame 21: 0.0 (BH1), 0.0 (BH2)
+Worker 21: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker21.npy
+Worker 21: Finished processing 1 frames.
+Worker 54/64 processing 1 frames from index 54 to 54
+Worker 54: Processing frame 54 (plt279851)
+Worker 54: levels_to_use for flux across BHs: [6, 7]
+Worker 54: integral of SURFACE_X at frame 54: 0.0039052457345001954 (BH1), 0.002804982901344938 (BH2)
+Worker 54: integral of SURFACE_Y at frame 54: -0.0012486540257732723 (BH1), 0.0009146384316887313 (BH2)
+Worker 54: integral of SURFACE_Z at frame 54: 0.0 (BH1), 0.0 (BH2)
+Worker 54: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker54.npy
+Worker 54: Finished processing 1 frames.
+Worker 47/64 processing 1 frames from index 47 to 47
+Worker 47: Processing frame 47 (plt244234)
+Worker 47: levels_to_use for flux across BHs: [6, 7]
+Worker 47: integral of SURFACE_X at frame 47: 0.0004472868373943686 (BH1), 0.004168285574261409 (BH2)
+Worker 47: integral of SURFACE_Y at frame 47: -0.0005912561725140811 (BH1), -0.00013665668995299353 (BH2)
+Worker 47: integral of SURFACE_Z at frame 47: 0.0 (BH1), 0.0 (BH2)
+Worker 47: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker47.npy
+Worker 47: Finished processing 1 frames.
+Worker 51/64 processing 1 frames from index 51 to 51
+Worker 51: Processing frame 51 (plt264587)
+Worker 51: levels_to_use for flux across BHs: [6, 7]
+Worker 51: integral of SURFACE_X at frame 51: 0.002291997205312062 (BH1), 0.004591031587657309 (BH2)
+Worker 51: integral of SURFACE_Y at frame 51: -0.0012057531470142714 (BH1), 0.0005908639650815617 (BH2)
+Worker 51: integral of SURFACE_Z at frame 51: 0.0 (BH1), 0.0 (BH2)
+Worker 51: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker51.npy
+Worker 51: Finished processing 1 frames.
+Worker 19/64 processing 1 frames from index 19 to 19
+Worker 19: Processing frame 19 (plt101764)
+Worker 19: levels_to_use for flux across BHs: [6, 7]
+Worker 19: integral of SURFACE_X at frame 19: 0.001783008307139886 (BH1), 0.003806830791627223 (BH2)
+Worker 19: integral of SURFACE_Y at frame 19: -0.0005905276027196089 (BH1), 0.0011477586958186766 (BH2)
+Worker 19: integral of SURFACE_Z at frame 19: 0.0 (BH1), 0.0 (BH2)
+Worker 19: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker19.npy
+Worker 19: Finished processing 1 frames.
+Worker 52/64 processing 1 frames from index 52 to 52
+Worker 52: Processing frame 52 (plt269675)
+Worker 52: levels_to_use for flux across BHs: [6, 7]
+Worker 52: integral of SURFACE_X at frame 52: 0.0030020232022761693 (BH1), 0.004250437498448973 (BH2)
+Worker 52: integral of SURFACE_Y at frame 52: -0.000847470770564113 (BH1), 0.0006811571758580692 (BH2)
+Worker 52: integral of SURFACE_Z at frame 52: 0.0 (BH1), 0.0 (BH2)
+Worker 52: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker52.npy
+Worker 52: Finished processing 1 frames.
+Worker 18/64 processing 1 frames from index 18 to 18
+Worker 18: Processing frame 18 (plt96676)
+Worker 18: levels_to_use for flux across BHs: [6, 7]
+Worker 18: integral of SURFACE_X at frame 18: 0.003460358165520548 (BH1), 0.0016954515388087458 (BH2)
+Worker 18: integral of SURFACE_Y at frame 18: -0.000744709043629204 (BH1), 0.0004562229365668509 (BH2)
+Worker 18: integral of SURFACE_Z at frame 18: 0.0 (BH1), 0.0 (BH2)
+Worker 18: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker18.npy
+Worker 18: Finished processing 1 frames.
+Worker 11/64 processing 1 frames from index 11 to 11
+Worker 11: Processing frame 11 (plt61059)
+Worker 11: levels_to_use for flux across BHs: [6, 7]
+Worker 11: integral of SURFACE_X at frame 11: 0.0010816085361184831 (BH1), 0.0030520653790770506 (BH2)
+Worker 11: integral of SURFACE_Y at frame 11: 0.000554737690388098 (BH1), -0.0008286922657018151 (BH2)
+Worker 11: integral of SURFACE_Z at frame 11: 0.0 (BH1), 0.0 (BH2)
+Worker 11: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker11.npy
+Worker 11: Finished processing 1 frames.
+Worker 55/64 processing 1 frames from index 55 to 55
+Worker 55: Processing frame 55 (plt284940)
+Worker 55: levels_to_use for flux across BHs: [6, 7]
+Worker 55: integral of SURFACE_X at frame 55: 0.004501642091283337 (BH1), 0.000531581494104039 (BH2)
+Worker 55: integral of SURFACE_Y at frame 55: -0.0007450335170832681 (BH1), -0.00029952993523293334 (BH2)
+Worker 55: integral of SURFACE_Z at frame 55: 0.0 (BH1), 0.0 (BH2)
+Worker 55: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker55.npy
+Worker 55: Finished processing 1 frames.
+Worker 3/64 processing 1 frames from index 3 to 3
+Worker 3: Processing frame 3 (plt20353)
+Worker 3: levels_to_use for flux across BHs: [6, 7]
+Worker 3: integral of SURFACE_X at frame 3: 0.0027650888763342445 (BH1), 2.1003201062228744e-05 (BH2)
+Worker 3: integral of SURFACE_Y at frame 3: -0.0004565061193183573 (BH1), -0.0005759374468222851 (BH2)
+Worker 3: integral of SURFACE_Z at frame 3: 0.0 (BH1), 0.0 (BH2)
+Worker 3: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker3.npy
+Worker 3: Finished processing 1 frames.
+Worker 28/64 processing 1 frames from index 28 to 28
+Worker 28: Processing frame 28 (plt147558)
+Worker 28: levels_to_use for flux across BHs: [6, 7]
+Worker 28: integral of SURFACE_X at frame 28: 0.0018051899920675817 (BH1), 0.0024652932899080033 (BH2)
+Worker 28: integral of SURFACE_Y at frame 28: 0.000649335187805085 (BH1), -0.0007803422393742325 (BH2)
+Worker 28: integral of SURFACE_Z at frame 28: 0.0 (BH1), 0.0 (BH2)
+Worker 28: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker28.npy
+Worker 28: Finished processing 1 frames.
+Worker 30/64 processing 1 frames from index 30 to 30
+Worker 30: Processing frame 30 (plt157735)
+Worker 30: levels_to_use for flux across BHs: [6, 7]
+Worker 30: integral of SURFACE_X at frame 30: 0.0007439821181569238 (BH1), 0.003269073772189689 (BH2)
+Worker 30: integral of SURFACE_Y at frame 30: -0.0010086054860377947 (BH1), 0.0004056610247270539 (BH2)
+Worker 30: integral of SURFACE_Z at frame 30: 0.0 (BH1), 0.0 (BH2)
+Worker 30: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker30.npy
+Worker 30: Finished processing 1 frames.
+Worker 33/64 processing 1 frames from index 33 to 33
+Worker 33: Processing frame 33 (plt172999)
+Worker 33: levels_to_use for flux across BHs: [6, 7]
+Worker 33: integral of SURFACE_X at frame 33: 0.001791412019917071 (BH1), 0.0049663251195592025 (BH2)
+Worker 33: integral of SURFACE_Y at frame 33: -0.0006618316455862071 (BH1), 0.00010978751249956733 (BH2)
+Worker 33: integral of SURFACE_Z at frame 33: 0.0 (BH1), 0.0 (BH2)
+Worker 33: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker33.npy
+Worker 33: Finished processing 1 frames.
+Worker 15/64 processing 1 frames from index 15 to 15
+Worker 15: Processing frame 15 (plt81412)
+Worker 15: levels_to_use for flux across BHs: [6, 7]
+Worker 15: integral of SURFACE_X at frame 15: 0.0013071798135632058 (BH1), 0.0033021249772893116 (BH2)
+Worker 15: integral of SURFACE_Y at frame 15: -2.614681110034647e-05 (BH1), -0.00021620130331678636 (BH2)
+Worker 15: integral of SURFACE_Z at frame 15: 0.0 (BH1), 0.0 (BH2)
+Worker 15: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker15.npy
+Worker 15: Finished processing 1 frames.
+Worker 41/64 processing 1 frames from index 41 to 41
+Worker 41: Processing frame 41 (plt213705)
+Worker 41: levels_to_use for flux across BHs: [6, 7]
+Worker 41: integral of SURFACE_X at frame 41: 0.0038263493147162944 (BH1), 0.0016171445593666804 (BH2)
+Worker 41: integral of SURFACE_Y at frame 41: -0.0002289402736818657 (BH1), 4.97675483367223e-05 (BH2)
+Worker 41: integral of SURFACE_Z at frame 41: 0.0 (BH1), 0.0 (BH2)
+Worker 41: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker41.npy
+Worker 41: Finished processing 1 frames.
+Worker 7/64 processing 1 frames from index 7 to 7
+Worker 7: Processing frame 7 (plt40706)
+Worker 7: levels_to_use for flux across BHs: [6, 7]
+Worker 7: integral of SURFACE_X at frame 7: 0.002787959452581244 (BH1), 0.0013442147751245906 (BH2)
+Worker 7: integral of SURFACE_Y at frame 7: 9.413592806981253e-05 (BH1), -0.0004934645233726655 (BH2)
+Worker 7: integral of SURFACE_Z at frame 7: 0.0 (BH1), 0.0 (BH2)
+Worker 7: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker7.npy
+Worker 7: Finished processing 1 frames.
+Worker 4/64 processing 1 frames from index 4 to 4
+Worker 4: Processing frame 4 (plt25441)
+Worker 4: levels_to_use for flux across BHs: [6, 7]
+Worker 4: integral of SURFACE_X at frame 4: 0.0021408736337447496 (BH1), 0.0011377021242038488 (BH2)
+Worker 4: integral of SURFACE_Y at frame 4: 0.00031824538665546105 (BH1), -0.0006937732206399905 (BH2)
+Worker 4: integral of SURFACE_Z at frame 4: 0.0 (BH1), 0.0 (BH2)
+Worker 4: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker4.npy
+Worker 4: Finished processing 1 frames.
+Worker 43/64 processing 1 frames from index 43 to 43
+Worker 43: Processing frame 43 (plt223881)
+Worker 43: levels_to_use for flux across BHs: [6, 7]
+Worker 43: integral of SURFACE_X at frame 43: 0.004035619756435306 (BH1), 0.003344552663588004 (BH2)
+Worker 43: integral of SURFACE_Y at frame 43: 0.0006132367176637508 (BH1), -0.0008550605101695127 (BH2)
+Worker 43: integral of SURFACE_Z at frame 43: 0.0 (BH1), 0.0 (BH2)
+Worker 43: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker43.npy
+Worker 43: Finished processing 1 frames.
+Worker 34/64 processing 1 frames from index 34 to 34
+Worker 34: Processing frame 34 (plt178087)
+Worker 34: levels_to_use for flux across BHs: [6, 7]
+Worker 34: integral of SURFACE_X at frame 34: 0.00251698793871191 (BH1), 0.004915874480359008 (BH2)
+Worker 34: integral of SURFACE_Y at frame 34: -0.0010011400374127163 (BH1), 0.0009143729035473954 (BH2)
+Worker 34: integral of SURFACE_Z at frame 34: 0.0 (BH1), 0.0 (BH2)
+Worker 34: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker34.npy
+Worker 34: Finished processing 1 frames.
+Worker 59/64 processing 1 frames from index 59 to 59
+Worker 59: Processing frame 59 (plt305292)
+Worker 59: levels_to_use for flux across BHs: [6, 7]
+Worker 59: integral of SURFACE_X at frame 59: 0.004318558064306616 (BH1), 0.0016212489814516257 (BH2)
+Worker 59: integral of SURFACE_Y at frame 59: 4.6615817490514884e-05 (BH1), -0.0007409598776992483 (BH2)
+Worker 59: integral of SURFACE_Z at frame 59: 0.0 (BH1), 0.0 (BH2)
+Worker 59: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker59.npy
+Worker 59: Finished processing 1 frames.
+Worker 38/64 processing 1 frames from index 38 to 38
+Worker 38: Processing frame 38 (plt198440)
+Worker 38: levels_to_use for flux across BHs: [6, 7]
+Worker 38: integral of SURFACE_X at frame 38: 0.004146681963392527 (BH1), 0.000749520223173968 (BH2)
+Worker 38: integral of SURFACE_Y at frame 38: -0.0004067233905742235 (BH1), -0.0008063676081534719 (BH2)
+Worker 38: integral of SURFACE_Z at frame 38: 0.0 (BH1), 0.0 (BH2)
+Worker 38: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker38.npy
+Worker 38: Finished processing 1 frames.
+Worker 56/64 processing 1 frames from index 56 to 56
+Worker 56: Processing frame 56 (plt290028)
+Worker 56: levels_to_use for flux across BHs: [6, 7]
+Worker 56: integral of SURFACE_X at frame 56: 0.003103067541561929 (BH1), 0.001266318205682765 (BH2)
+Worker 56: integral of SURFACE_Y at frame 56: 0.00014819743196225175 (BH1), -0.0010643741469919686 (BH2)
+Worker 56: integral of SURFACE_Z at frame 56: 0.0 (BH1), 0.0 (BH2)
+Worker 56: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker56.npy
+Worker 56: Finished processing 1 frames.
+Worker 37/64 processing 1 frames from index 37 to 37
+Worker 37: Processing frame 37 (plt193352)
+Worker 37: levels_to_use for flux across BHs: [6, 7]
+Worker 37: integral of SURFACE_X at frame 37: 0.004201722132139624 (BH1), 0.0018351454278367771 (BH2)
+Worker 37: integral of SURFACE_Y at frame 37: -0.0010723968184484355 (BH1), 0.0005594285138125306 (BH2)
+Worker 37: integral of SURFACE_Z at frame 37: 0.0 (BH1), 0.0 (BH2)
+Worker 37: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker37.npy
+Worker 37: Finished processing 1 frames.
+Worker 12/64 processing 1 frames from index 12 to 12
+Worker 12: Processing frame 12 (plt66147)
+Worker 12: levels_to_use for flux across BHs: [6, 7]
+Worker 12: integral of SURFACE_X at frame 12: 0.00010350037492555696 (BH1), 0.002710590411385181 (BH2)
+Worker 12: integral of SURFACE_Y at frame 12: -0.00044432420679304846 (BH1), -3.242653428118836e-05 (BH2)
+Worker 12: integral of SURFACE_Z at frame 12: 0.0 (BH1), 0.0 (BH2)
+Worker 12: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker12.npy
+Worker 12: Finished processing 1 frames.
+Worker 16/64 processing 1 frames from index 16 to 16
+Worker 16: Processing frame 16 (plt86500)
+Worker 16: levels_to_use for flux across BHs: [6, 7]
+Worker 16: integral of SURFACE_X at frame 16: 0.0020182692925203123 (BH1), 0.0019441039470671306 (BH2)
+Worker 16: integral of SURFACE_Y at frame 16: -0.00044373790656573756 (BH1), 0.00040990461913846846 (BH2)
+Worker 16: integral of SURFACE_Z at frame 16: 0.0 (BH1), 0.0 (BH2)
+Worker 16: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker16.npy
+Worker 16: Finished processing 1 frames.
+Worker 46/64 processing 1 frames from index 46 to 46
+Worker 46: Processing frame 46 (plt239146)
+Worker 46: levels_to_use for flux across BHs: [6, 7]
+Worker 46: integral of SURFACE_X at frame 46: 0.0009615273723323973 (BH1), 0.004580072420930397 (BH2)
+Worker 46: integral of SURFACE_Y at frame 46: 0.0006613275377167839 (BH1), -0.0012733015107392585 (BH2)
+Worker 46: integral of SURFACE_Z at frame 46: 0.0 (BH1), 0.0 (BH2)
+Worker 46: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker46.npy
+Worker 46: Finished processing 1 frames.
+Worker 24/64 processing 1 frames from index 24 to 24
+Worker 24: Processing frame 24 (plt127205)
+Worker 24: levels_to_use for flux across BHs: [6, 7]
+Worker 24: integral of SURFACE_X at frame 24: 0.001812262231085109 (BH1), 0.000649137879230958 (BH2)
+Worker 24: integral of SURFACE_Y at frame 24: -0.0001417261454702854 (BH1), -0.0004517142424666341 (BH2)
+Worker 24: integral of SURFACE_Z at frame 24: 0.0 (BH1), 0.0 (BH2)
+Worker 24: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker24.npy
+Worker 24: Finished processing 1 frames.
+Worker 61/64 processing 1 frames from index 61 to 61
+Worker 61: Processing frame 61 (plt315469)
+Worker 61: levels_to_use for flux across BHs: [6, 7]
+Worker 61: integral of SURFACE_X at frame 61: 0.004220771740562876 (BH1), 0.003307686677945552 (BH2)
+Worker 61: integral of SURFACE_Y at frame 61: 0.0007218923499985385 (BH1), -0.000551149321150704 (BH2)
+Worker 61: integral of SURFACE_Z at frame 61: 0.0 (BH1), 0.0 (BH2)
+Worker 61: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker61.npy
+Worker 61: Finished processing 1 frames.
+Worker 40/64 processing 1 frames from index 40 to 40
+Worker 40: Processing frame 40 (plt208617)
+Worker 40: levels_to_use for flux across BHs: [6, 7]
+Worker 40: integral of SURFACE_X at frame 40: 0.0024777862854856573 (BH1), 0.0023710227783998047 (BH2)
+Worker 40: integral of SURFACE_Y at frame 40: -0.0003675883417415025 (BH1), 0.0004590204298168987 (BH2)
+Worker 40: integral of SURFACE_Z at frame 40: 0.0 (BH1), 0.0 (BH2)
+Worker 40: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker40.npy
+Worker 40: Finished processing 1 frames.
+Worker 35/64 processing 1 frames from index 35 to 35
+Worker 35: Processing frame 35 (plt183176)
+Worker 35: levels_to_use for flux across BHs: [6, 7]
+Worker 35: integral of SURFACE_X at frame 35: 0.0030611547241566174 (BH1), 0.004179538706026633 (BH2)
+Worker 35: integral of SURFACE_Y at frame 35: -0.0006363055089494093 (BH1), 0.0007280584390877748 (BH2)
+Worker 35: integral of SURFACE_Z at frame 35: 0.0 (BH1), 0.0 (BH2)
+Worker 35: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker35.npy
+Worker 35: Finished processing 1 frames.
+Worker 48/64 processing 1 frames from index 48 to 48
+Worker 48: Processing frame 48 (plt249322)
+Worker 48: levels_to_use for flux across BHs: [6, 7]
+Worker 48: integral of SURFACE_X at frame 48: 0.0020190774455961552 (BH1), 0.0028864603755304587 (BH2)
+Worker 48: integral of SURFACE_Y at frame 48: -0.0006673845953760959 (BH1), 6.117523943265369e-05 (BH2)
+Worker 48: integral of SURFACE_Z at frame 48: 0.0 (BH1), 0.0 (BH2)
+Worker 48: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker48.npy
+Worker 48: Finished processing 1 frames.
+Worker 63/64 processing 1 frames from index 63 to 63
+Worker 63: Processing frame 63 (plt325645)
+Worker 63: levels_to_use for flux across BHs: [6, 7]
+Worker 63: integral of SURFACE_X at frame 63: 0.0018096267446351128 (BH1), 0.004426405296672288 (BH2)
+Worker 63: integral of SURFACE_Y at frame 63: 0.0011527101738924876 (BH1), -0.0015689317829016426 (BH2)
+Worker 63: integral of SURFACE_Z at frame 63: 0.0 (BH1), 0.0 (BH2)
+Worker 63: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker63.npy
+Worker 63: Finished processing 1 frames.
+Worker 13/64 processing 1 frames from index 13 to 13
+Worker 13: Processing frame 13 (plt71235)
+Worker 13: levels_to_use for flux across BHs: [6, 7]
+Worker 13: integral of SURFACE_X at frame 13: 0.001282396640535965 (BH1), 0.001909819992146418 (BH2)
+Worker 13: integral of SURFACE_Y at frame 13: -0.0005602406834495405 (BH1), 0.00026066444952450944 (BH2)
+Worker 13: integral of SURFACE_Z at frame 13: 0.0 (BH1), 0.0 (BH2)
+Worker 13: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker13.npy
+Worker 13: Finished processing 1 frames.
+Worker 29/64 processing 1 frames from index 29 to 29
+Worker 29: Processing frame 29 (plt152646)
+Worker 29: levels_to_use for flux across BHs: [6, 7]
+Worker 29: integral of SURFACE_X at frame 29: 0.000702192835521812 (BH1), 0.004082449690120782 (BH2)
+Worker 29: integral of SURFACE_Y at frame 29: 0.00043381406325659097 (BH1), -0.0006215466629532055 (BH2)
+Worker 29: integral of SURFACE_Z at frame 29: 0.0 (BH1), 0.0 (BH2)
+Worker 29: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker29.npy
+Worker 29: Finished processing 1 frames.
+Worker 45/64 processing 1 frames from index 45 to 45
+Worker 45: Processing frame 45 (plt234058)
+Worker 45: levels_to_use for flux across BHs: [6, 7]
+Worker 45: integral of SURFACE_X at frame 45: 0.003692021233847735 (BH1), 0.0036499684630920213 (BH2)
+Worker 45: integral of SURFACE_Y at frame 45: 0.0012835880000350995 (BH1), -0.0013999726574657739 (BH2)
+Worker 45: integral of SURFACE_Z at frame 45: 0.0 (BH1), 0.0 (BH2)
+Worker 45: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker45.npy
+Worker 45: Finished processing 1 frames.
+Worker 39/64 processing 1 frames from index 39 to 39
+Worker 39: Processing frame 39 (plt203528)
+Worker 39: levels_to_use for flux across BHs: [6, 7]
+Worker 39: integral of SURFACE_X at frame 39: 0.0030402524721535266 (BH1), 0.0018997079111329044 (BH2)
+Worker 39: integral of SURFACE_Y at frame 39: 8.899059834654848e-05 (BH1), -0.0010298093774204142 (BH2)
+Worker 39: integral of SURFACE_Z at frame 39: 0.0 (BH1), 0.0 (BH2)
+Worker 39: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker39.npy
+Worker 39: Finished processing 1 frames.
+Worker 25/64 processing 1 frames from index 25 to 25
+Worker 25: Processing frame 25 (plt132294)
+Worker 25: levels_to_use for flux across BHs: [6, 7]
+Worker 25: integral of SURFACE_X at frame 25: 0.001617265148997843 (BH1), 0.0007310069696921899 (BH2)
+Worker 25: integral of SURFACE_Y at frame 25: 6.0116424380418846e-05 (BH1), -0.0003159578489177798 (BH2)
+Worker 25: integral of SURFACE_Z at frame 25: 0.0 (BH1), 0.0 (BH2)
+Worker 25: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker25.npy
+Worker 25: Finished processing 1 frames.
+Worker 53/64 processing 1 frames from index 53 to 53
+Worker 53: Processing frame 53 (plt274763)
+Worker 53: levels_to_use for flux across BHs: [6, 7]
+Worker 53: integral of SURFACE_X at frame 53: 0.0030606933982917717 (BH1), 0.004285099694468514 (BH2)
+Worker 53: integral of SURFACE_Y at frame 53: -0.0007909838047757691 (BH1), 0.0008706472361274944 (BH2)
+Worker 53: integral of SURFACE_Z at frame 53: 0.0 (BH1), 0.0 (BH2)
+Worker 53: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker53.npy
+Worker 53: Finished processing 1 frames.
+Worker 0/64 processing 1 frames from index 0 to 0
+Worker 0: Processing frame 0 (plt05089)
+Worker 0: levels_to_use for flux across BHs: [6, 7]
+Worker 0: integral of SURFACE_X at frame 0: 0.0013938316388117345 (BH1), 0.0019900310102655794 (BH2)
+Worker 0: integral of SURFACE_Y at frame 0: -0.000466248530306483 (BH1), 0.0003790225742906645 (BH2)
+Worker 0: integral of SURFACE_Z at frame 0: 0.0 (BH1), 0.0 (BH2)
+Worker 0: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker0.npy
+Worker 0: Finished processing 1 frames.
+Worker 44/64 processing 1 frames from index 44 to 44
+Worker 44: Processing frame 44 (plt228969)
+Worker 44: levels_to_use for flux across BHs: [6, 7]
+Worker 44: integral of SURFACE_X at frame 44: 0.004318353736909811 (BH1), 0.0033500770662101055 (BH2)
+Worker 44: integral of SURFACE_Y at frame 44: 0.0006772991331418768 (BH1), -0.0006686816314137128 (BH2)
+Worker 44: integral of SURFACE_Z at frame 44: 0.0 (BH1), 0.0 (BH2)
+Worker 44: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker44.npy
+Worker 44: Finished processing 1 frames.
+Worker 31/64 processing 1 frames from index 31 to 31
+Worker 31: Processing frame 31 (plt162823)
+Worker 31: levels_to_use for flux across BHs: [6, 7]
+Worker 31: integral of SURFACE_X at frame 31: 0.0025624999042010003 (BH1), 0.0027552684168113024 (BH2)
+Worker 31: integral of SURFACE_Y at frame 31: -0.0003082945724924884 (BH1), -0.00014249434083351122 (BH2)
+Worker 31: integral of SURFACE_Z at frame 31: 0.0 (BH1), 0.0 (BH2)
+Worker 31: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker31.npy
+Worker 31: Finished processing 1 frames.
+Worker 17/64 processing 1 frames from index 17 to 17
+Worker 17: Processing frame 17 (plt91588)
+Worker 17: levels_to_use for flux across BHs: [6, 7]
+Worker 17: integral of SURFACE_X at frame 17: 0.0017019443321428334 (BH1), 0.002260422313213785 (BH2)
+Worker 17: integral of SURFACE_Y at frame 17: -0.00036582068608959187 (BH1), 0.0004252727988794881 (BH2)
+Worker 17: integral of SURFACE_Z at frame 17: 0.0 (BH1), 0.0 (BH2)
+Worker 17: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker17.npy
+Worker 17: Finished processing 1 frames.
+Worker 42/64 processing 1 frames from index 42 to 42
+Worker 42: Processing frame 42 (plt218793)
+Worker 42: levels_to_use for flux across BHs: [6, 7]
+Worker 42: integral of SURFACE_X at frame 42: 0.004129847504062682 (BH1), 0.0022040397968009443 (BH2)
+Worker 42: integral of SURFACE_Y at frame 42: 0.00034508357641960306 (BH1), -0.0008845446854134755 (BH2)
+Worker 42: integral of SURFACE_Z at frame 42: 0.0 (BH1), 0.0 (BH2)
+Worker 42: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker42.npy
+Worker 42: Finished processing 1 frames.
+Worker 27/64 processing 1 frames from index 27 to 27
+Worker 27: Processing frame 27 (plt142470)
+Worker 27: levels_to_use for flux across BHs: [6, 7]
+Worker 27: integral of SURFACE_X at frame 27: 0.002510736455425333 (BH1), 0.0019468311735153813 (BH2)
+Worker 27: integral of SURFACE_Y at frame 27: 0.0007327054555662241 (BH1), -0.0006771410609767375 (BH2)
+Worker 27: integral of SURFACE_Z at frame 27: 0.0 (BH1), 0.0 (BH2)
+Worker 27: Saved results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker27.npy
+Worker 27: Finished processing 1 frames.
+Workers execution time: 00:00:06
+Merging results: python merge_parallel_results.py --simname 250514_BBH_r70 --outR 160.0 --excise_factor 1.5 --type surface --total_workers 64 --out_suffix parallel
+Found 64 worker files matching pattern: 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker*.npy
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker28.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker39.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker63.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker62.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker42.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker60.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker58.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker24.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker1.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker6.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker16.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker20.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker61.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker57.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker21.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker43.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker11.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker33.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker48.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker55.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker3.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker19.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker52.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker2.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker10.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker30.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker41.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker18.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker44.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker35.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker38.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker45.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker7.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker59.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker29.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker34.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker4.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker13.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker49.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker54.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker46.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker40.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker37.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker36.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker32.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker14.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker15.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker5.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker26.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker12.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker23.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker8.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker17.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker53.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker31.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker47.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker56.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker51.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker27.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker9.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker22.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker0.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker25.npy with 1 frames
+Loaded 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_worker50.npy with 1 frames
+Saved combined results to 250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5_parallel.npy with 64 total frames
+Created plots: 250514_BBH_r70_2d_surface_integrals_outR160.0_parallel.png and 250514_BBH_r70_2d_surface_integrals_bh_excise1.5_parallel.png
+Found reference file: /pscratch/sd/x/xinshuo/plotGReX/250514_BBH_r70_2d_integrals_surface_outR160.0_excise1.5.npy
+Reference data shape: (144, 14)
+Combined data shape: (64, 14)
+✗ Frame count mismatch: Reference 144 vs Combined 64
+Common frames: [  50.00787354  100.00592041  150.00396729  200.00201416  250.00006104
+  300.00793457  350.00598145  400.00402832  450.0020752   500.00012207
+  550.00799561  600.00604248  650.00408936  700.00213623  750.00018311
+  800.00805664  850.00610352  900.00415039  950.00219727 1000.00024414
+ 1050.00811768 1100.00616455 1150.00421143 1200.0022583  1250.00030518
+ 1300.00817871 1350.00622559 1400.00427246 1450.00231934 1500.00036621
+ 1550.00823975 1600.00628662 1650.0043335  1700.00238037 1750.00042725
+ 1800.00830078 1850.00634766 1900.00439453 1950.00244141 2000.00048828
+ 2050.00836182 2100.00640869 2150.00445557 2200.00250244 2250.00054932
+ 2300.00842285 2350.00646973 2400.0045166  2450.00256348 2500.00061035
+ 2550.00848389 2600.00653076 2650.00457764 2700.00262451 2750.00067139
+ 2800.00854492 2850.0065918  2900.00463867 2950.00268555 3000.00073242
+ 3050.00860596 3100.00665283 3150.00469971 3200.00274658]
+✓ Time values match
+✓ Column 1 matches perfectly
+✓ Column 2 matches perfectly
+✓ Column 3 matches perfectly
+✓ Column 4 matches perfectly
+✓ Column 5 matches perfectly
+✓ Column 6 matches perfectly
+✓ Column 7 matches perfectly
+✓ Column 8 matches perfectly
+✓ Column 9 matches perfectly
+✓ Column 10 matches perfectly
+✓ Column 11 matches perfectly
+✓ Column 12 matches perfectly
+✓ Column 13 matches perfectly
+
+Summary of differences:
+Maximum relative difference: 0.0
+✓ Results match within expected numerical precision
+Merge execution time: 00:00:01
+Completed test_integrate_2d_surface_parallel.py processing in 00:00:08
+----------------------------------------------------------------------
+All processing complete!
+----------------------------------------------------------------------
+  Total execution time: 00:00:19
+----------------------------------------------------------------------
+Worker files deleted
