@@ -92,7 +92,13 @@ for frameidx, plt_dir in enumerate(plt_dirs):
         if outplot:
             intdomain = ds.sphere(ds.domain_center, (outR+30, "code_length"))
         if curlevel < ds.max_level:
-            intdomain = intdomain - ds.box(level_left_edges[curlevel+1], level_right_edges[curlevel+1])
+            # subtract only if the next level is completely inside the outR
+            if level_right_edges[curlevel+1][0]*np.sqrt(2) < outR: # assuming the domain is square
+                print("subtract next level", curlevel+1)
+                intdomain = intdomain - ds.box(level_left_edges[curlevel+1], level_right_edges[curlevel+1])
+            else:
+                print("the circle crosses the next level", curlevel+1)
+                
         
         field_ds_levels[curlevel] = ds.covering_grid(level=curlevel, left_edge=level_left_edges[curlevel], dims=level_dims[curlevel], data_source=intdomain)
         

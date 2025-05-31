@@ -4,3 +4,4 @@
 *.png
 *.npy
 !surface_integral_check.png
+heatmaps/

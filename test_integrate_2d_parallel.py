@@ -55,6 +55,10 @@ rundir = basedir + simname +"/"
 if not os.path.exists(plotdir + "tmp"):
     os.makedirs(plotdir + "tmp")
 
+# make the worker tmp directories if they don't exist
+if not os.path.exists(plotdir + f"tmp/worker_{worker_id}"):
+    os.makedirs(plotdir + f"tmp/worker_{worker_id}")
+
 # Create a tmp directory for worker output files
 if temp_output and not os.path.exists(plotdir + f"tmp/worker_{worker_id}"):
     os.makedirs(plotdir + f"tmp/worker_{worker_id}")
