@@ -122,7 +122,7 @@ for frameidx, plt_dir in enumerate(plt_dirs):
         myW = field_ds_levels[curlevel]['W'][:]
         myW = myW.sum(axis=2)
         zero_mask = (myW == 0)
-        psi = 1.0 / myW
+        psi = 1.0 / np.sqrt(myW)
         psi[zero_mask] = 1.0
         sqrt_gamma = np.power(psi, 6)
         
@@ -134,7 +134,7 @@ for frameidx, plt_dir in enumerate(plt_dirs):
             # Apply metric corrections based on field type and fix_metric_error flag
             if field.startswith('VOLUME'):
                 if fix_metric_error:
-                    # VOLUME fields have psi12 but should have psi6, so divide by sqrt(gamma) = psi6
+                    # VOLUME fields have psi12 in the previous version (before 20250522) but should have psi6, so to correct it, divide by sqrt(gamma) = psi6
                     sum_z_with_metric = sum_z / sqrt_gamma
                 else:
                     # VOLUME fields already include psi12 (incorrect but as computed)

@@ -236,7 +236,7 @@ for frameidx, plt_dir in enumerate(plt_dirs):
         myW = cg['W'][:]
         myW = myW.sum(axis=2)
         zero_mask = (myW == 0)
-        psi = 1.0 / myW
+        psi = 1.0 / np.sqrt(myW)
         # psi[zero_mask] = 1.0
         # sqrt_gamma = np.power(psi, 6)
 
