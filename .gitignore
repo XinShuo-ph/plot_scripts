@@ -5,3 +5,4 @@
 *.npy
 !surface_integral_check.png
 heatmaps/
+plotlog.txt

@@ -236,11 +236,11 @@ for frameidx, plt_dir in enumerate(plt_dirs):
     
     # Save intermediate results if requested
     if temp_output:
-        np.save(f"{plotdir}/tmp/worker_{worker_id}/{simname}_2d_integrals_outR{outR}_excise{excise_factor}_worker{worker_id}.npy", 
+        np.save(f"{plotdir}/tmp/worker_{worker_id}/{simname}_2d_integrals_outR{outR}_excise{excise_factor}_psipow{psipow:.1f}_worker{worker_id}.npy", 
                 np.array(results))
 
 # Save worker results
-output_filename = f"{simname}_2d_integrals_outR{outR}_excise{excise_factor}_worker{worker_id}.npy"
+output_filename = f"{simname}_2d_integrals_outR{outR}_excise{excise_factor}_psipow{psipow:.1f}_worker{worker_id}.npy"
 np.save(output_filename, np.array(results))
 print(f"Worker {worker_id}: Saved results to {output_filename}")
 
@@ -256,7 +256,7 @@ if worker_id == 0 or total_workers == 1:
     plt.xlabel('Time')
     plt.ylabel('2D Integral')
     plt.legend()
-    plt.savefig(f"{simname}_2d_volume_integrals_outR{outR}_excise{excise_factor}_worker{worker_id}.png")
+    plt.savefig(f"{simname}_2d_volume_integrals_outR{outR}_excise{excise_factor}_psipow{psipow:.1f}_worker{worker_id}.png")
     plt.close()
 
     plt.figure()
@@ -267,7 +267,7 @@ if worker_id == 0 or total_workers == 1:
     plt.xlabel('Time')
     plt.ylabel('2D Integral')
     plt.legend()
-    plt.savefig(f"{simname}_2d_momentum_integrals_outR{outR}_excise{excise_factor}_worker{worker_id}.png")
+    plt.savefig(f"{simname}_2d_momentum_integrals_outR{outR}_excise{excise_factor}_psipow{psipow:.1f}_worker{worker_id}.png")
     plt.close()
 
 print(f"Worker {worker_id}: Finished processing {len(plt_dirs)} frames.") 

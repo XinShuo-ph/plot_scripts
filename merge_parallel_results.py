@@ -11,6 +11,9 @@ parser.add_argument('--excise_factor', type=float, default=1.5, help='factor to 
 parser.add_argument('--type', type=str, default="volume", choices=["volume", "surface"], help='Type of data to merge (volume or surface)')
 parser.add_argument('--total_workers', type=int, default=4, help='Total number of workers used')
 parser.add_argument('--out_suffix', type=str, default='', help='Suffix to add to output files')
+parser.add_argument('--psipow_volume', type=float, default=2.0, help='Power of psi factor for volume')
+parser.add_argument('--psipow_surface', type=float, default=-2.0, help='Power of psi factor for surface')
+parser.add_argument('--psipow_surface_correction', type=float, default=-2.0, help='Power of psi factor for surface correction')
 
 args = parser.parse_args()
 simname = args.simname
@@ -19,21 +22,24 @@ excise_factor = args.excise_factor
 data_type = args.type
 total_workers = args.total_workers
 out_suffix = args.out_suffix
+psipow_volume = args.psipow_volume
+psipow_surface = args.psipow_surface
+psipow_surface_correction = args.psipow_surface_correction
 
 # Add suffix to output filename if provided
 suffix = f"_{out_suffix}" if out_suffix else ""
 
 # Determine file pattern based on data type
 if data_type == "volume":
-    file_pattern = f"{simname}_2d_integrals_outR{outR}_excise{excise_factor}_worker*.npy"
-    output_file = f"{simname}_2d_integrals_outR{outR}_excise{excise_factor}{suffix}.npy"
-    plot_file1 = f"{simname}_2d_volume_integrals_outR{outR}_excise{excise_factor}{suffix}.png"
-    plot_file2 = f"{simname}_2d_momentum_integrals_outR{outR}_excise{excise_factor}{suffix}.png"
+    file_pattern = f"{simname}_2d_integrals_outR{outR}_excise{excise_factor}_psipow{psipow_volume:.1f}_worker*.npy"
+    output_file = f"{simname}_2d_integrals_outR{outR}_excise{excise_factor}_psipow{psipow_volume:.1f}{suffix}.npy"
+    plot_file1 = f"{simname}_2d_volume_integrals_outR{outR}_excise{excise_factor}_psipow{psipow_volume:.1f}{suffix}.png"
+    plot_file2 = f"{simname}_2d_momentum_integrals_outR{outR}_excise{excise_factor}_psipow{psipow_volume:.1f}{suffix}.png"
 else:
-    file_pattern = f"{simname}_2d_integrals_surface_outR{outR}_excise{excise_factor}_worker*.npy"
-    output_file = f"{simname}_2d_integrals_surface_outR{outR}_excise{excise_factor}{suffix}.npy"
-    plot_file1 = f"{simname}_2d_surface_integrals_outR{outR}{suffix}.png"
-    plot_file2 = f"{simname}_2d_surface_integrals_bh_excise{excise_factor}{suffix}.png"
+    file_pattern = f"{simname}_2d_integrals_surface_outR{outR}_excise{excise_factor}_psipow{psipow_surface:.1f}_psipow_surface_correction{psipow_surface_correction:.1f}_worker*.npy"
+    output_file = f"{simname}_2d_integrals_surface_outR{outR}_excise{excise_factor}_psipow{psipow_surface:.1f}_psipow_surface_correction{psipow_surface_correction:.1f}{suffix}.npy"
+    plot_file1 = f"{simname}_2d_surface_integrals_outR{outR}_psipow{psipow_surface:.1f}_psipow_surface_correction{psipow_surface_correction:.1f}{suffix}.png"
+    plot_file2 = f"{simname}_2d_surface_integrals_bh_excise{excise_factor}_psipow{psipow_surface:.1f}_psipow_surface_correction{psipow_surface_correction:.1f}{suffix}.png"
 
 # Find all worker result files
 worker_files = glob.glob(file_pattern)
@@ -116,9 +122,9 @@ print(f"Created plots: {plot_file1} and {plot_file2}")
 # Cross-check with reference file if exists
 reference_file = None
 if data_type == "volume":
-    reference_pattern = f"/pscratch/sd/x/xinshuo/plotGReX/{simname}_2d_integrals_outR{outR}_excise{excise_factor}.npy"
+    reference_pattern = f"/pscratch/sd/x/xinshuo/plotGReX/{simname}_2d_integrals_outR{outR}_excise{excise_factor}_parallel.npy"
 else:
-    reference_pattern = f"/pscratch/sd/x/xinshuo/plotGReX/{simname}_2d_integrals_surface_outR{outR}_excise{excise_factor}.npy"
+    reference_pattern = f"/pscratch/sd/x/xinshuo/plotGReX/{simname}_2d_integrals_surface_outR{outR}_excise{excise_factor}_parallel.npy"
 
 reference_files = glob.glob(reference_pattern)
 if reference_files:

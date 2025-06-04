@@ -206,6 +206,15 @@ run_parallel() {
     # Record merge start time
     local merge_start_time=$(date +%s)
     merge_cmd="python merge_parallel_results.py --simname $simname --outR $outR --excise_factor $excise_factor --type $type --total_workers $total_workers --out_suffix $out_suffix"
+
+    # add psipow_volume or psipow_surface to the merge command
+    if [[ "$type" == "volume" ]]; then
+        merge_cmd="$merge_cmd $(add_arg "psipow_volume" "$psipow_volume")"
+    else
+        merge_cmd="$merge_cmd $(add_arg "psipow_surface" "$psipow_surface")"
+        # merge_cmd="$merge_cmd $(add_arg "psipow_surface_correction" "$psipow_surface_correction")"
+    fi
+
     echo "Merging results: $merge_cmd"
     eval $merge_cmd
     local merge_end_time=$(date +%s)
@@ -256,11 +265,11 @@ if [[ -n "$binary_omega" ]]; then
 fi
 echo "----------------------------------------------------------------------"
 
+# Process surface integrals
+run_parallel "test_integrate_2d_surface_parallel.py" "$simname" "$outR" "$total_workers" "$excise_factor" "$maxframes" "surface" "$psipow_surface"
 # Process volume integrals
 run_parallel "test_integrate_2d_parallel.py" "$simname" "$outR" "$total_workers" "$excise_factor" "$maxframes" "volume" "$psipow_volume"
 
-# Process surface integrals
-run_parallel "test_integrate_2d_surface_parallel.py" "$simname" "$outR" "$total_workers" "$excise_factor" "$maxframes" "surface" "$psipow_surface"
 
 # Calculate total execution time
 total_end_time=$(date +%s)
@@ -271,6 +280,7 @@ echo "  Total execution time: $(format_time $total_elapsed)"
 echo "----------------------------------------------------------------------"
 
 # Cleanup worker files
-rm -f ${simname}_2d_integrals_outR${outR}_excise${excise_factor}_worker*.npy
-rm -f ${simname}_2d_integrals_surface_outR${outR}_excise${excise_factor}_worker*.npy
+# rm -f ${simname}_2d_integrals_outR${outR}_excise${excise_factor}_worker*.npy
+# rm -f ${simname}_2d_integrals_surface_outR${outR}_excise${excise_factor}_worker*.npy
+rm -f *worker*.npy
 echo "Worker files deleted" 

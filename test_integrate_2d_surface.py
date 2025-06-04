@@ -22,7 +22,12 @@ parser.add_argument('--binary_omega', type=float, default=- 0.002657634562418009
 parser.add_argument('--excise_factor', type=float, default=1.5, help='factor to excise the black hole')
 parser.add_argument('--outplot', action='store_true', help='Output the plot')
 parser.add_argument('--plotsum', action='store_true', help='plot the sum instead of a slice')
-parser.add_argument('--psipow', type=float, default=-2, help='power of psi factor')
+parser.add_argument('--psipow', type=float, default=-2, help='power of psi factor for the torque')
+# refer to https://arxiv.org/pdf/2104.13420 Appendix Eq. 43 and 44, we should use \sqrt{\sigma} N_i = \sqrt{\gamma} s_i 
+# but in current code (20250603), I normalize N_i to N_i N^i=1, but in reality we should not raise s_i to upper idx
+# this leads to an extrafactor of \psi^2, to correct this, we multiply the surface integral by \psi^-2
+# (However, we seem to still miss an overall \sqrt{\gamma} factor...   )
+parser.add_argument('--psipow_surface_correction', type=float, default=-2, help='power of psi factor for the surface correction ')
 
 args = parser.parse_args()
 simname = args.simname
@@ -39,6 +44,7 @@ excise_factor = args.excise_factor
 outplot = args.outplot
 plotsum = args.plotsum
 psipow = args.psipow
+psipow_surface_correction = args.psipow_surface_correction
 
 basedir = "/pscratch/sd/x/xinshuo/runGReX/"
 plotdir = "/pscratch/sd/x/xinshuo/plotGReX/"
@@ -105,7 +111,12 @@ for frameidx, plt_dir in enumerate(plt_dirs):
         for field in ['SURFACE_X', 'SURFACE_Y', 'SURFACE_Z', 'RHO_ENERGY']:
             data = field_ds_levels[curlevel][field][:]
             sum_z = data.sum(axis=2)
-                # Define the extent using the level boundaries for correct axis scaling
+            # 20250603 correction: multiply by psi^(-2) = W for the surface integral, (for generality, psi^(psipow_surface_correction) = W^(-psipow_surface_correction/2) )
+            myWdata = field_ds_levels[curlevel]['W'][:]
+            myWdata = myWdata.sum(axis=2)
+            if field == 'SURFACE_X' or field == 'SURFACE_Y' or field == 'SURFACE_Z':
+                sum_z = sum_z * np.power(myWdata, -psipow_surface_correction/2)
+            # Define the extent using the level boundaries for correct axis scaling
             extent = [level_left_edges[curlevel][0], level_right_edges[curlevel][0], 
                         level_left_edges[curlevel][1], level_right_edges[curlevel][1]]
 
@@ -245,7 +256,8 @@ for frameidx, plt_dir in enumerate(plt_dirs):
 
         for fld in ['SURFACE_X', 'SURFACE_Y', 'SURFACE_Z']:
             # collapse the thin-z direction (sum over z index)
-            sumz_lv_field[(lev, fld)] = (cg[fld][:].sum(axis=2)) 
+            # 20250603 correction: multiply by psi^(-2) = W for the surface integral, (for generality, psi^(psipow_surface_correction) = W^(-psipow_surface_correction/2) )
+            sumz_lv_field[(lev, fld)] = (cg[fld][:].sum(axis=2)) * np.power(psi, psipow_surface_correction)
         fld = 'psifactor'
         sumz_lv_field[(lev, fld)] = np.power(psi, psipow)
 
@@ -346,7 +358,7 @@ for frameidx, plt_dir in enumerate(plt_dirs):
                 rhoavg, sur_torque, sur_bh1_torque, sur_bh2_torque]) 
 
 results = np.array(results)
-np.save(f"{simname}_2d_integrals_surface_outR{outR}_excise{excise_factor}.npy", results)
+np.save(f"{simname}_2d_integrals_surface_outR{outR}_excise{excise_factor}_psipow{psipow}_psipow_surface_correction{psipow_surface_correction}.npy", results)
 
 plt.figure()
 plt.plot(results[:,0], results[:,1], label='SURFACE_X')
@@ -357,7 +369,7 @@ plt.plot(results[:,0], results[:,11], label='sur_torque')
 plt.xlabel('Time')
 plt.ylabel('2D Integral')
 plt.legend()
-plt.savefig(f"{simname}_2d_surface_integrals_outR{outR}.png")
+plt.savefig(f"{simname}_2d_surface_integrals_outR{outR}_psipow{psipow}_psipow_surface_correction{psipow_surface_correction}.png")
 plt.close()
 
 plt.figure()
@@ -372,5 +384,5 @@ plt.plot(results[:,0], results[:,13], label='sur_bh2_torque')
 plt.xlabel('Time')
 plt.ylabel('2D Integral')
 plt.legend()
-plt.savefig(f"{simname}_2d_surface_integrals_bh_excise{excise_factor}.png")
+plt.savefig(f"{simname}_2d_surface_integrals_bh_excise{excise_factor}_psipow{psipow}_psipow_surface_correction{psipow_surface_correction}.png")
 plt.close()
