@@ -3,6 +3,8 @@
 *.pdf
 *.png
 *.npy
+*.csv
+tmp
 !surface_integral_check.png
 heatmaps/
 plotlog.txt
