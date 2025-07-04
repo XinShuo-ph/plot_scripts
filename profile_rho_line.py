@@ -18,6 +18,7 @@ parser.add_argument('--source_y', type=float, default=600, help='Maximum y-coord
 parser.add_argument('--skipevery', type=int, default=1, help='Skip every n iterations')
 parser.add_argument('--maxframes', type=int, default=10000, help='Maximum number of frames to process')
 parser.add_argument('--tmpfile', type=str, default='/tmp/rho_avg_results.txt', help='Temporary file to write results')
+parser.add_argument('--time_threshold', type=float, default=200.0, help='Time threshold for calculating average (default: 200.0)')
 
 args = parser.parse_args()
 
@@ -28,6 +29,7 @@ source_y = args.source_y
 skipevery = args.skipevery
 maxframes = args.maxframes
 tmpfile = args.tmpfile
+time_threshold = args.time_threshold
 
 basedir = "/pscratch/sd/x/xinshuo/runGReX/"
 plotdir = "/pscratch/sd/x/xinshuo/plotGReX/"
@@ -126,31 +128,31 @@ line_averages = np.array(line_averages)
 # Get final time
 final_time = times[-1] if len(times) > 0 else 0.0
 
-# Calculate average of rho_avg after t=200
-mask_after_t200 = times >= 200.0
-if np.any(mask_after_t200):
-    avg_after_t200 = np.mean(line_averages[mask_after_t200])
-    print(f"\nAverage RHO_ENERGY after t=200: {avg_after_t200:.6e}")
+# Calculate average of rho_avg after time_threshold
+mask_after_threshold = times >= time_threshold
+if np.any(mask_after_threshold):
+    avg_after_threshold = np.mean(line_averages[mask_after_threshold])
+    print(f"\nAverage RHO_ENERGY after t={time_threshold}: {avg_after_threshold:.6e}")
 else:
-    avg_after_t200 = 0.0
-    print("\nNo data points after t=200")
+    avg_after_threshold = 0.0
+    print(f"\nNo data points after t={time_threshold}")
 
 # Write results to temporary file
 with open(tmpfile, 'w') as f:
     f.write(f"simname: {simname}\n")
     f.write(f"final_time: {final_time}\n")
-    f.write(f"avg_after_t200: {avg_after_t200:.6e}\n")
+    f.write(f"avg_after_{time_threshold}: {avg_after_threshold:.6e}\n")
 
 # Plot average over time if requested
 if outplot and len(times) > 0:
     plt.figure(figsize=(10, 6))
     plt.plot(times, line_averages, 'r-')
     
-    # Highlight the average after t=200 if applicable
-    if np.any(mask_after_t200):
-        plt.axhline(y=avg_after_t200, color='blue', linestyle='--', 
-                   label=f'Avg after t=200: {avg_after_t200:.6e}')
-        plt.axvline(x=200, color='green', linestyle='--', label='t=200')
+    # Highlight the average after time_threshold if applicable
+    if np.any(mask_after_threshold):
+        plt.axhline(y=avg_after_threshold, color='blue', linestyle='--', 
+                   label=f'Avg after t={time_threshold}: {avg_after_threshold:.6e}')
+        plt.axvline(x=time_threshold, color='green', linestyle='--', label=f't={time_threshold}')
         plt.legend()
     
     plt.grid(True)

@@ -27,6 +27,7 @@ parser.add_argument('--psipow', type=float, default=-2, help='power of psi facto
 # this leads to an extrafactor of \psi^2, to correct this, we multiply the surface integral by \psi^-2
 # (However, we seem to still miss an overall \sqrt{\gamma} factor...   )
 parser.add_argument('--psipow_surface_correction', type=float, default=-2, help='power of psi factor for the surface correction ')
+parser.add_argument('--withQ', action='store_true', help='process energy flux and noether charge Q flux')
 # Add worker arguments for parallelization
 parser.add_argument('--worker_id', type=int, default=0, help='Worker ID for parallel processing')
 parser.add_argument('--total_workers', type=int, default=1, help='Total number of workers for parallel processing')
@@ -50,6 +51,7 @@ worker_id = args.worker_id
 total_workers = args.total_workers
 temp_output = args.temp_output
 psipow_surface_correction = args.psipow_surface_correction
+withQ = args.withQ
 
 basedir = "/pscratch/sd/x/xinshuo/runGReX/"
 plotdir = "/pscratch/sd/x/xinshuo/plotGReX/"
@@ -113,6 +115,13 @@ for frameidx, plt_dir in enumerate(plt_dirs):
     sur_torque = 0.0
     sur_bh1_torque = 0.0
     sur_bh2_torque = 0.0
+    # Add variables for energy flux and Q charge flux
+    energy_flux = 0.0
+    qcharge_flux = 0.0
+    bh1_energy_flux = 0.0
+    bh2_energy_flux = 0.0
+    bh1_qcharge_flux = 0.0
+    bh2_qcharge_flux = 0.0
 
     # a simple routine to find the level that contains the outer boundary, please make sure the circle does not cross the level boundary
     out_boundary_level = -1
@@ -140,13 +149,17 @@ for frameidx, plt_dir in enumerate(plt_dirs):
         
         field_ds_levels[curlevel] = ds.covering_grid(level=curlevel, left_edge=level_left_edges[curlevel], dims=level_dims[curlevel], data_source=intdomain)
         
-        for field in ['SURFACE_X', 'SURFACE_Y', 'SURFACE_Z', 'RHO_ENERGY']:
+        fields_to_integrate = ['SURFACE_X', 'SURFACE_Y', 'SURFACE_Z', 'RHO_ENERGY']
+        if withQ:
+            fields_to_integrate.extend(['ENERGY_FLUX', 'QCHARGE_FLUX'])
+            
+        for field in fields_to_integrate:
             data = field_ds_levels[curlevel][field][:]
             sum_z = data.sum(axis=2)
             # 20250603 correction: multiply by psi^(-2) = W for the surface integral, (for generality, psi^(psipow_surface_correction) = W^(-psipow_surface_correction/2) )
             myWdata = field_ds_levels[curlevel]['W'][:]
             myWdata = myWdata.sum(axis=2)
-            if field == 'SURFACE_X' or field == 'SURFACE_Y' or field == 'SURFACE_Z':
+            if field == 'SURFACE_X' or field == 'SURFACE_Y' or field == 'SURFACE_Z' or field == 'ENERGY_FLUX' or field == 'QCHARGE_FLUX':
                 sum_z = sum_z * np.power(myWdata, -psipow_surface_correction/2)
                 # Define the extent using the level boundaries for correct axis scaling
             extent = [level_left_edges[curlevel][0], level_right_edges[curlevel][0], 
@@ -263,6 +276,10 @@ for frameidx, plt_dir in enumerate(plt_dirs):
                 sur_z += integral
             elif field == 'RHO_ENERGY':
                 rhoavg += integral/(2.0 * np.pi * outR) # compute averaged rho
+            elif field == 'ENERGY_FLUX':
+                energy_flux += integral
+            elif field == 'QCHARGE_FLUX':
+                qcharge_flux += integral
 
     # integrate on the two black holes
     levels_to_use = [ds.max_level-1, ds.max_level]                     # BH excision usually sits in these
@@ -286,7 +303,11 @@ for frameidx, plt_dir in enumerate(plt_dirs):
         extent_lv[lev] = [level_left_edges[lev][0], level_right_edges[lev][0],
                         level_left_edges[lev][1], level_right_edges[lev][1]]
 
-        for fld in ['SURFACE_X', 'SURFACE_Y', 'SURFACE_Z']:
+        bh_fields = ['SURFACE_X', 'SURFACE_Y', 'SURFACE_Z']
+        if withQ:
+            bh_fields.extend(['ENERGY_FLUX', 'QCHARGE_FLUX'])
+            
+        for fld in bh_fields:
             # collapse the thin-z direction (sum over z index)
             # 20250603 correction: multiply by psi^(-2) = W for the surface integral, (for generality, psi^(psipow_surface_correction) = W^(-psipow_surface_correction/2) )
             sumz_lv_field[(lev, fld)] = (cg[fld][:].sum(axis=2)) * np.power(psi, psipow_surface_correction)
@@ -333,10 +354,16 @@ for frameidx, plt_dir in enumerate(plt_dirs):
     dl_bh1 = 2.0*np.pi*R_exc1 / n_th      # arc-length per segment
     dl_bh2 = 2.0*np.pi*R_exc2 / n_th      # arc-length per segment
 
-    for fld, acc in [('SURFACE_X', (sur_bh1_x, sur_bh2_x)),
-                    ('SURFACE_Y', (sur_bh1_y, sur_bh2_y)),
-                    ('SURFACE_Z', (sur_bh1_z, sur_bh2_z))]:
-
+    bh_surface_fields = [('SURFACE_X', (sur_bh1_x, sur_bh2_x)),
+                        ('SURFACE_Y', (sur_bh1_y, sur_bh2_y)),
+                        ('SURFACE_Z', (sur_bh1_z, sur_bh2_z))]
+    if withQ:
+        bh_surface_fields.extend([
+            ('ENERGY_FLUX', (bh1_energy_flux, bh2_energy_flux)),
+            ('QCHARGE_FLUX', (bh1_qcharge_flux, bh2_qcharge_flux))
+        ])
+    
+    for fld, acc in bh_surface_fields:
         vals_bh1 = np.empty(n_th)
         vals_bh2 = np.empty(n_th)
         vals_bh1_torque = np.empty(n_th)
@@ -381,21 +408,37 @@ for frameidx, plt_dir in enumerate(plt_dirs):
             sur_bh2_torque += integral_bh2_torque
         elif fld == 'SURFACE_Z':
             sur_bh1_z, sur_bh2_z = integral_bh1, integral_bh2
+        elif fld == 'ENERGY_FLUX':
+            bh1_energy_flux, bh2_energy_flux = integral_bh1, integral_bh2
+        elif fld == 'QCHARGE_FLUX':
+            bh1_qcharge_flux, bh2_qcharge_flux = integral_bh1, integral_bh2
 
         print(f"Worker {worker_id}: integral of {fld} at frame {global_frameidx}: {integral_bh1} (BH1), {integral_bh2} (BH2)")
-    results.append([ds.current_time,
+
+    result_data = [ds.current_time,
                 sur_x, sur_y, sur_z,          # outer surface
                 sur_bh1_x, sur_bh1_y, sur_bh1_z, # BH 1 
                 sur_bh2_x, sur_bh2_y, sur_bh2_z, # BH 2
-                rhoavg, sur_torque, sur_bh1_torque, sur_bh2_torque])
+                rhoavg, sur_torque, sur_bh1_torque, sur_bh2_torque]
+    
+    if withQ:
+        result_data.extend([energy_flux, qcharge_flux, bh1_energy_flux, bh2_energy_flux, bh1_qcharge_flux, bh2_qcharge_flux])
+    
+    results.append(result_data)
     
     # Save intermediate results if requested
     if temp_output:
-        np.save(f"{plotdir}/tmp/worker_{worker_id}/{simname}_2d_integrals_surface_outR{outR}_excise{excise_factor}_psipow{psipow:.1f}_psipow_surface_correction{psipow_surface_correction:.1f}_worker{worker_id}.npy", 
+        file_suffix = f"_psipow{psipow:.1f}_psipow_surface_correction{psipow_surface_correction:.1f}"
+        if withQ:
+            file_suffix += "_withQ"
+        np.save(f"{plotdir}/tmp/worker_{worker_id}/{simname}_2d_integrals_surface_outR{outR}_excise{excise_factor}{file_suffix}_worker{worker_id}.npy", 
                 np.array(results))
 
 # Save worker results
-output_filename = f"{simname}_2d_integrals_surface_outR{outR}_excise{excise_factor}_psipow{psipow:.1f}_psipow_surface_correction{psipow_surface_correction:.1f}_worker{worker_id}.npy"
+file_suffix = f"_psipow{psipow:.1f}_psipow_surface_correction{psipow_surface_correction:.1f}"
+# if withQ:
+#     file_suffix += "_withQ"
+output_filename = f"{simname}_2d_integrals_surface_outR{outR}_excise{excise_factor}{file_suffix}_worker{worker_id}.npy"
 np.save(output_filename, np.array(results))
 print(f"Worker {worker_id}: Saved results to {output_filename}")
 
@@ -409,10 +452,13 @@ if worker_id == 0 or total_workers == 1:
     plt.plot(results_array[:,0], results_array[:,3], label='SURFACE_Z')
     plt.plot(results_array[:,0], results_array[:,10], label='rhoavg')
     plt.plot(results_array[:,0], results_array[:,11], label='sur_torque')
+    if withQ:
+        plt.plot(results_array[:,0], results_array[:,14], label='ENERGY_FLUX')
+        plt.plot(results_array[:,0], results_array[:,15], label='QCHARGE_FLUX')
     plt.xlabel('Time')
     plt.ylabel('2D Integral')
     plt.legend()
-    plt.savefig(f"{simname}_2d_surface_integrals_outR{outR}_psipow{psipow:.1f}_psipow_surface_correction{psipow_surface_correction:.1f}_worker{worker_id}.png")
+    plt.savefig(f"{simname}_2d_surface_integrals_outR{outR}{file_suffix}_worker{worker_id}.png")
     plt.close()
 
     plt.figure()
@@ -424,10 +470,30 @@ if worker_id == 0 or total_workers == 1:
     plt.plot(results_array[:,0], results_array[:,9], label='SURFACE_Z BH2')
     plt.plot(results_array[:,0], results_array[:,12], label='sur_bh1_torque')
     plt.plot(results_array[:,0], results_array[:,13], label='sur_bh2_torque')
+    if withQ:
+        plt.plot(results_array[:,0], results_array[:,16], label='ENERGY_FLUX BH1')
+        plt.plot(results_array[:,0], results_array[:,17], label='ENERGY_FLUX BH2')
+        plt.plot(results_array[:,0], results_array[:,18], label='QCHARGE_FLUX BH1')
+        plt.plot(results_array[:,0], results_array[:,19], label='QCHARGE_FLUX BH2')
     plt.xlabel('Time')
     plt.ylabel('2D Integral')
     plt.legend()
-    plt.savefig(f"{simname}_2d_surface_integrals_bh_excise{excise_factor}_psipow{psipow:.1f}_psipow_surface_correction{psipow_surface_correction:.1f}_worker{worker_id}.png")
+    plt.savefig(f"{simname}_2d_surface_integrals_bh_excise{excise_factor}{file_suffix}_worker{worker_id}.png")
     plt.close()
+
+    if withQ:
+        # Create a separate plot just for the energy and Q fluxes
+        plt.figure()
+        plt.plot(results_array[:,0], results_array[:,14], label='ENERGY_FLUX')
+        plt.plot(results_array[:,0], results_array[:,15], label='QCHARGE_FLUX')
+        plt.plot(results_array[:,0], results_array[:,16], label='ENERGY_FLUX BH1')
+        plt.plot(results_array[:,0], results_array[:,17], label='ENERGY_FLUX BH2')
+        plt.plot(results_array[:,0], results_array[:,18], label='QCHARGE_FLUX BH1')
+        plt.plot(results_array[:,0], results_array[:,19], label='QCHARGE_FLUX BH2')
+        plt.xlabel('Time')
+        plt.ylabel('Flux')
+        plt.legend()
+        plt.savefig(f"{simname}_2d_flux_summary{file_suffix}_worker{worker_id}.png")
+        plt.close()
 
 print(f"Worker {worker_id}: Finished processing {len(plt_dirs)} frames.") 

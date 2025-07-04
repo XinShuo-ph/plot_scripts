@@ -63,6 +63,10 @@ while [[ $# -gt 0 ]]; do
       temp_output="true"
       shift
       ;;
+    --withQ)
+      withQ="true"
+      shift
+      ;;
     --bbh1_x)
       bbh1_x="$2"
       shift 2
@@ -107,6 +111,7 @@ fix_metric_error=${fix_metric_error:-"false"}
 psipow_volume=${psipow_volume:-"2"}
 psipow_surface=${psipow_surface:-"-2"}
 temp_output=${temp_output:-"false"}
+withQ=${withQ:-"false"}
 parallel_out_suffix=${parallel_out_suffix:-"parallel"}
 
 # Function to convert boolean string to flag
@@ -122,6 +127,7 @@ get_flag() {
 outplot_flag=$(get_flag "$outplot" "outplot")
 fix_metric_error_flag=$(get_flag "$fix_metric_error" "fix_metric_error")
 temp_output_flag=$(get_flag "$temp_output" "temp_output")
+withQ_flag=$(get_flag "$withQ" "withQ")
 
 # Function to add an argument to command if the variable is defined
 add_arg() {
@@ -176,7 +182,7 @@ run_parallel() {
         fi
         
         # Add common boolean flags
-        cmd="$cmd $outplot_flag $temp_output_flag"
+        cmd="$cmd $outplot_flag $temp_output_flag $withQ_flag"
         
         # Trim extra spaces
         cmd=$(echo "$cmd" | tr -s ' ')
@@ -246,6 +252,7 @@ echo "  Skip every: $skipevery"
 echo "  Inner radius: $innerR"
 echo "  Output plots: $outplot"
 echo "  Temporary output: $temp_output"
+echo "  Process noether charge Q: $withQ"
 
 # Print BH parameters only if they were provided
 if [[ -n "$bbh1_x" ]]; then

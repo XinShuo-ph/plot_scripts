@@ -23,6 +23,7 @@ parser.add_argument('--excise_factor', type=float, default=1.5, help='factor to 
 parser.add_argument('--outplot', action='store_true', help='Output the plot')
 parser.add_argument('--fix_metric_error', action='store_true', help='Fix the metric error in VOLUME fields (apply 1/sqrt(gamma) correction)')
 parser.add_argument('--psipow', type=float, default=2, help='power of psi factor')
+parser.add_argument('--withQ', action='store_true', help='using the simulation code with noether charge Q and also the energy accretion')
 # Add worker arguments for parallelization
 parser.add_argument('--worker_id', type=int, default=0, help='Worker ID for parallel processing')
 parser.add_argument('--total_workers', type=int, default=1, help='Total number of workers for parallel processing')
@@ -46,6 +47,7 @@ psipow = args.psipow
 worker_id = args.worker_id
 total_workers = args.total_workers
 temp_output = args.temp_output
+withQ = args.withQ
 
 basedir = "/pscratch/sd/x/xinshuo/runGReX/"
 plotdir = "/pscratch/sd/x/xinshuo/plotGReX/"
@@ -109,6 +111,10 @@ for frameidx, plt_dir in enumerate(plt_dirs):
     mom_x, mom_y, mom_z = 0.0, 0.0, 0.0
     torque = 0.0 # torque = x*Fy - y*Fx
     L_z = 0.0 # angular momentum
+    if withQ:
+        Qnoether = 0.0
+        rho_energy = 0.0
+        energy_dissipation = 0.0
 
     for curlevel in range(ds.max_level+1):
         outdomain = ds.box(level_left_edges[curlevel], level_right_edges[curlevel])
@@ -152,7 +158,11 @@ for frameidx, plt_dir in enumerate(plt_dirs):
         psi[zero_mask] = 1.0
         sqrt_gamma = np.power(psi, 6)
         
-        for field in ['VOLUME_X', 'VOLUME_Y', 'VOLUME_Z', 'SMOMENTUM_X', 'SMOMENTUM_Y', 'SMOMENTUM_Z']:
+        fields_to_integrate = ['VOLUME_X', 'VOLUME_Y', 'VOLUME_Z', 'SMOMENTUM_X', 'SMOMENTUM_Y', 'SMOMENTUM_Z']
+        if withQ:
+            fields_to_integrate = ['VOLUME_X', 'VOLUME_Y', 'VOLUME_Z', 'ENERGY_DISSIPATION', 'SMOMENTUM_X', 'SMOMENTUM_Y', 'SMOMENTUM_Z', 'QCHARGE', 'RHO_ENERGY']
+        
+        for field in fields_to_integrate:
             data = field_ds_levels[curlevel][field][:]
             # print(data.shape)
             sum_z = data.sum(axis=2)  # Extract 2D data by summing over z
@@ -231,8 +241,17 @@ for frameidx, plt_dir in enumerate(plt_dirs):
                 L_z += (all_level_xmeshs[curlevel] * sum_z_with_metric * np.power(psi, psipow)).sum() * dx * dy
             elif field == 'SMOMENTUM_Z':
                 mom_z += integral
+            elif field == 'ENERGY_DISSIPATION':
+                energy_dissipation += integral
+            elif field == 'QCHARGE':
+                Qnoether += integral
+            elif field == 'RHO_ENERGY':
+                rho_energy += integral
 
-    results.append([ds.current_time, vol_x, vol_y, vol_z, mom_x, mom_y, mom_z, torque, L_z])
+    if withQ:
+        results.append([ds.current_time, vol_x, vol_y, vol_z, mom_x, mom_y, mom_z, torque, L_z, Qnoether, energy_dissipation, rho_energy])
+    else:
+        results.append([ds.current_time, vol_x, vol_y, vol_z, mom_x, mom_y, mom_z, torque, L_z])
     
     # Save intermediate results if requested
     if temp_output:
@@ -253,6 +272,8 @@ if worker_id == 0 or total_workers == 1:
     plt.plot(results_array[:,0], results_array[:,2], label='VOLUME_Y')
     plt.plot(results_array[:,0], results_array[:,3], label='VOLUME_Z')
     plt.plot(results_array[:,0], results_array[:,7], label='TORQUE')
+    if withQ:
+        plt.plot(results_array[:,0], results_array[:,10], label='ENERGY_DISSIPATION')
     plt.xlabel('Time')
     plt.ylabel('2D Integral')
     plt.legend()
@@ -264,6 +285,9 @@ if worker_id == 0 or total_workers == 1:
     plt.plot(results_array[:,0], results_array[:,5], label='SMOMENTUM_Y')
     plt.plot(results_array[:,0], results_array[:,6], label='SMOMENTUM_Z')
     plt.plot(results_array[:,0], results_array[:,8], label='ANGULAR MOMENTUM')
+    if withQ:
+        plt.plot(results_array[:,0], results_array[:,9], label='QCHARGE')
+        plt.plot(results_array[:,0], results_array[:,11], label='RHO_ENERGY')
     plt.xlabel('Time')
     plt.ylabel('2D Integral')
     plt.legend()

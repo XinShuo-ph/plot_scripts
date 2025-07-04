@@ -27,6 +27,7 @@ parser.add_argument('--outplot', action='store_true', help='Output the plot')
 parser.add_argument('--plotsum', action='store_true', help='plot the sum instead of a slice')
 parser.add_argument('--fix_metric_error', action='store_true', help='Fix the metric error in VOLUME fields (apply 1/sqrt(gamma) correction)')
 parser.add_argument('--psipow', type=float, default=2, help='power of psi factor')
+parser.add_argument('--withQ', action='store_true', help='using the simulation code with noether charge Q and also the energy accretion')
 
 args = parser.parse_args()
 simname = args.simname
@@ -47,6 +48,7 @@ outplot = args.outplot
 plotsum = args.plotsum
 fix_metric_error = args.fix_metric_error
 psipow = args.psipow
+withQ = args.withQ
 
 basedir = "/pscratch/sd/x/xinshuo/runGReX/"
 plotdir = "/pscratch/sd/x/xinshuo/plotGReX/"
@@ -83,6 +85,10 @@ for frameidx, plt_dir in enumerate(plt_dirs):
     mom_x, mom_y, mom_z = 0.0, 0.0, 0.0
     torque = 0.0 # torque = x*Fy - y*Fx
     L_z = 0.0 # angular momentum
+    if withQ:
+        Qnoether = 0.0
+        rho_energy = 0.0
+        energy_dissipation = 0.0
 
     for curlevel in range(ds.max_level+1):
         outdomain = ds.box(level_left_edges[curlevel], level_right_edges[curlevel])
@@ -125,8 +131,12 @@ for frameidx, plt_dir in enumerate(plt_dirs):
         psi = 1.0 / np.sqrt(myW)
         psi[zero_mask] = 1.0
         sqrt_gamma = np.power(psi, 6)
+
+        fields_to_integrate = ['VOLUME_X', 'VOLUME_Y', 'VOLUME_Z', 'SMOMENTUM_X', 'SMOMENTUM_Y', 'SMOMENTUM_Z']
+        if withQ:
+            fields_to_integrate = ['VOLUME_X', 'VOLUME_Y', 'VOLUME_Z', 'ENERGY_DISSIPATION', 'SMOMENTUM_X', 'SMOMENTUM_Y', 'SMOMENTUM_Z', 'QCHARGE', 'RHO_ENERGY']
         
-        for field in ['VOLUME_X', 'VOLUME_Y', 'VOLUME_Z', 'SMOMENTUM_X', 'SMOMENTUM_Y', 'SMOMENTUM_Z']:
+        for field in fields_to_integrate:
             data = field_ds_levels[curlevel][field][:]
             # print(data.shape)
             sum_z = data.sum(axis=2)  # Extract 2D data by summing over z
@@ -205,8 +215,17 @@ for frameidx, plt_dir in enumerate(plt_dirs):
                 L_z += (all_level_xmeshs[curlevel] * sum_z_with_metric * np.power(psi, psipow)).sum() * dx * dy
             elif field == 'SMOMENTUM_Z':
                 mom_z += integral
-
-    results.append([ds.current_time, vol_x, vol_y, vol_z, mom_x, mom_y, mom_z, torque, L_z])
+            elif field == 'ENERGY_DISSIPATION':
+                energy_dissipation += integral
+            elif field == 'QCHARGE':
+                Qnoether += integral
+            elif field == 'RHO_ENERGY':
+                rho_energy += integral
+    
+    if withQ:
+        results.append([ds.current_time, vol_x, vol_y, vol_z, mom_x, mom_y, mom_z, torque, L_z, Qnoether, energy_dissipation, rho_energy])
+    else:
+        results.append([ds.current_time, vol_x, vol_y, vol_z, mom_x, mom_y, mom_z, torque, L_z])
 
 results = np.array(results)
 np.save(f"{simname}_2d_integrals_outR{outR}_excise{excise_factor}_psipow{psipow}.npy", results)
@@ -216,6 +235,8 @@ plt.plot(results[:,0], results[:,1], label='VOLUME_X')
 plt.plot(results[:,0], results[:,2], label='VOLUME_Y')
 plt.plot(results[:,0], results[:,3], label='VOLUME_Z')
 plt.plot(results[:,0], results[:,7], label='TORQUE')
+if withQ:
+    plt.plot(results[:,0], results[:,11], label='ENERGY_DISSIPATION')
 plt.xlabel('Time')
 plt.ylabel('2D Integral')
 plt.legend()
@@ -227,6 +248,9 @@ plt.plot(results[:,0], results[:,4], label='SMOMENTUM_X')
 plt.plot(results[:,0], results[:,5], label='SMOMENTUM_Y')
 plt.plot(results[:,0], results[:,6], label='SMOMENTUM_Z')
 plt.plot(results[:,0], results[:,8], label='ANGULAR MOMENTUM')
+if withQ:
+    plt.plot(results[:,0], results[:,10], label='QCHARGE')
+    plt.plot(results[:,0], results[:,12], label='RHO_ENERGY')
 plt.xlabel('Time')
 plt.ylabel('2D Integral')
 plt.legend()
